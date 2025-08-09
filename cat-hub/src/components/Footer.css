@@ -1,0 +1,12 @@
+footer p {
+    max-width: unset;
+    margin-left: 5rem;
+    padding: 1rem 2rem;
+    text-align: right;
+}
+
+ @media (max-width: 600px) {
+        footer p {
+            margin: 0%;
+        }
+    }
