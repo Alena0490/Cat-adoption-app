@@ -126,3 +126,33 @@ h2 .sex-icon {
 .buttons .adopt-button:hover {
     background-color: var(--icon-primary);
 }
+
+@media (max-width: 668px) {
+    .one-cat {
+        max-width: 100%;
+        padding: .5rem;
+    }
+    
+    .one-cat img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .one-cat h2 {
+        font-size: 1.5rem;
+    }
+    
+    .one-cat p {
+        font-size: 0.9rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .buttons button {
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+}
