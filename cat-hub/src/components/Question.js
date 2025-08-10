@@ -2,7 +2,7 @@ import './Question.css';
 import { useState } from 'react';
 import { FaAnglesDown } from "react-icons/fa6";
 
-const Question = ({ question, answer }) => {
+const Question = ({ id, question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -11,12 +11,14 @@ const Question = ({ question, answer }) => {
                 <h3 className='questionH3'>{question}</h3>
                 <button 
                     className='toggle-button' 
-                    ariaLabel="show answer"
-                    onClick={() => setIsOpen(!isOpen)}>
+                    aria-label="Show answer"
+                    aria-expanded={isOpen}
+                    aria-controls={`ans-${id}`}
+                    onClick={()=>setIsOpen(v=>!v)}>
                         <FaAnglesDown />
                 </button>
             </section>    
-            {isOpen && <p>{answer}</p>}
+            {isOpen && <p id={`ans-${id}`}>{answer}</p>}
         </div>
     );
 }

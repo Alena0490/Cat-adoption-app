@@ -40,7 +40,7 @@
   --color-info-light: #64b5f6;
 
  /*Transition*/
-    --transition-speed: 0.6s;
+    --transition-speed: 0.3s;
     --transition-timing: ease-out;
 }
 
@@ -51,7 +51,7 @@ section.hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: first baseline;
+    align-items: flex-start;
     background: url("../images/heading-photo1.webp");
     background-size: cover;
     background-position: center center;
@@ -85,4 +85,10 @@ p.introduction {
     text-align: left;
     color: var(--text-muted);
     margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    section.hero {
+        background-position: left 60% center;
+    }
 }

@@ -11,7 +11,13 @@ const OneCat = ({ cat }) => {
 
   return (
     <article className="one-cat" data-id={id}>
-        <img src={image} alt={name} loading="lazy" />
+        <img 
+            src={image} 
+            alt={name} 
+            loading="lazy"
+            sizes="(max-width: 600px) 100vw, 400px" 
+        />
+        
         <h2 className="cat-name">
             {name}{' '}
             {sex === 'Male' ? (
@@ -29,18 +35,25 @@ const OneCat = ({ cat }) => {
             <p><strong>Age:</strong> {age}</p>
             <p><strong>Breed:</strong> {breed}</p>
             <p><strong>Spayed/Neutered:</strong> {castration ? 'Yes' : 'No'}</p>
-            <p className={statusClass}>
-                <strong>Adoption Status:</strong> <span>{adopted ? 'Unavailable' : 'Available'}</span>
+            <p className={`status ${adopted ? 'unavailable' : 'available'}`} aria-live="polite">
+                <strong>Status:</strong> <span>{adopted ? 'Unavailable' : 'Available'}</span>
             </p>
       </div>
 
       <div className="buttons">
-        <button className="donate-button" type="button">Buy snack</button>
+        <button 
+            className="donate-button" 
+            type="button" 
+            // onClick={()=>openDonate(cat.id)}
+        >
+            Buy treats (€3)
+        </button>
          <button
           className={`adopt-button${adopted ? ' disabled' : ''}`}
           type="button"
           disabled={adopted}
           aria-disabled={adopted}
+        //   onClick={()=>navigate(`/contacts?cat=${encodeURIComponent(name)}`)}
         >
           {adopted ? 'Unavailable' : 'Adopt'}
         </button>

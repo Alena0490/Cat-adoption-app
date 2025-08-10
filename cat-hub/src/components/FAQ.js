@@ -10,6 +10,7 @@ const FAQ = () => {
         <Question
             className ="faq-question"
             key={item.id}
+            id={item.id} // ← přidat
             question={item.question}
             answer={item.answer}
         />

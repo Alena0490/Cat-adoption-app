@@ -42,8 +42,12 @@
   --color-info-light: #64b5f6;
 
  /*Transition*/
-    --transition-speed: 0.6s;
+    --transition-speed: 0.3s;
     --transition-timing: ease-out;
+
+    /* Hights */
+    --bottom-bar-h: 4rem; 
+    --footer-h: 3.5rem; 
 }
 
 * {
@@ -82,7 +86,7 @@ h1 {
     text-align: left;
     color: var(--icon-secondary);
     margin: 1rem;
-    font-size: 3rem;
+    font-size: clamp(2rem, 1.25rem + 2.5vw, 3rem);
 }
 
 p {
@@ -94,6 +98,7 @@ p {
 
  @media (max-width: 600px) {
         main {
+            margin-left: 0% !important;
             margin: 0%;
         }
     }
@@ -101,3 +106,5 @@ p {
 @media (min-width: 600px) {
     
     }
+
+

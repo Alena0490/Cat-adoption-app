@@ -37,24 +37,47 @@ form.form {
 
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+textarea {
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
     color: var(--text-primary);
     background-color: var(--bg-secondary);
     /* border: 1px solid var(--text-secondary); */
-    border: none;
+    border: 1px solid transparent;
     border-radius: 0.25rem;
     outline: none;
-    transition: all var(--transition-speed) var(--transition-speed);}
+    transition: all var(--transition-speed) var(--transition-timing);
+}
 
-    input[type="text"]:focus,
-    input[type="email"]:focus {
-        /* border: 1px solid var(--text-primary); */
-        box-shadow: inset 0px 0px 2px var(--text-secondary);
-        background-color: var(--bg-primary-light);
-    }
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    /* border: 1px solid var(--text-primary); */
+    box-shadow: inset 0px 0px 2px var(--text-secondary);
+    background-color: var(--bg-primary-light);
+}
+
+.form input[type="email"][aria-invalid="true"] {
+  color: var(--color-error);
+}
+
+.is-invalid { 
+    outline: 2px solid var(--color-error); 
+}
+
+.form input[type="text"][aria-invalid="true"],
+.form input[type="email"][aria-invalid="true"],
+.form textarea[aria-invalid="true"] {
+    border-color: var(--color-error) !important;
+}
+
+small[role="alert"] {
+    color: var(--color-error-light);
+    display: block; 
+    margin-top: .25rem; 
+}
 
 input[type="submit"] {
     width: 100%;

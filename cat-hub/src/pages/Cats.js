@@ -38,36 +38,68 @@ const Cats = () => {
   return (
     <div className="cats page">
         <h1>Cats for adoption</h1>
-        <div className="filters">
-            <select value={sex} onChange={(e) => setSex(e.target.value)} aria-label="Sex">
+        <p className="result-count" aria-live="polite">
+           {filteredCats.length} cats found
+        </p>
+        <fieldset className="filters" aria-label="Filters">
+            <legend className="sr-only">Filters</legend>
+
+            <div className="filter">
+                <label htmlFor="sex">Sex</label>
+                <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
                 <option value="all">All</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
-            </select>
+                </select>
+            </div>
 
-            <select value={availability} onChange={(e) => setAvailability(e.target.value)} aria-label="Availability">
-                <option value="all">Availability: All</option>
+            <div className="filter">
+                <label htmlFor="availability">Availability</label>
+                <select
+                id="availability"
+                value={availability}
+                onChange={(e) => setAvailability(e.target.value)}
+                >
+                <option value="all">All</option>
                 <option value="available">Available</option>
                 <option value="unavailable">Unavailable</option>
-            </select>
+                </select>
+            </div>
 
-            <select value={castration} onChange={(e) => setCastration(e.target.value)} aria-label="Spayed/Neutered">
-                <option value="all">Spayed/Neutered: All</option>
+            <div className="filter">
+                <label htmlFor="castration">Spayed/Neutered</label>
+                <select
+                id="castration"
+                value={castration}
+                onChange={(e) => setCastration(e.target.value)}
+                >
+                <option value="all">All</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
-            </select>
+                </select>
+            </div>
 
-            <select value={kitten} onChange={(e) => setKitten(e.target.value)} aria-label="Age group">
-                <option value="all">Age: All</option>
-                <option value="only">Only kittens (&lt; 1 year)</option>
+            <div className="filter">
+                <label htmlFor="kitten">Age group</label>
+                <select
+                id="kitten"
+                value={kitten}
+                onChange={(e) => setKitten(e.target.value)}
+                >
+                <option value="all">All</option>
+                <option value="only">Kittens (&lt; 1 year)</option>
                 <option value="adults">Adults (≥ 1 year)</option>
-            </select>
-        </div>      
+                </select>
+            </div>
+        </fieldset>
+      
 
       <div className="cats-list">
-        {filteredCats.map(cat => (
-          <OneCat key={cat.id} cat={cat} />
-        ))}
+        {filteredCats.length === 0 ? (
+      <p className="empty">No cats match your filters. Try changing criteria.</p>
+        ) : (
+        filteredCats.map(cat => <OneCat key={cat.id} cat={cat} />)
+        )}
       </div>
     </div>
   );

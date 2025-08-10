@@ -22,28 +22,28 @@ const Menu = ({ onOpenSettings }) => {
                 </li>
 
                 <li className="navbar-li">
-                    <NavLink to="/" className="nav-link">
+                    <NavLink to="/" aria-label="Home" end className={({isActive}) => `nav-link${isActive ? ' active' : ''}`}>
                         <FaCat className="icon-img" />
                         <span className="link-text">Home</span>
                     </NavLink>
                 </li>
 
                 <li className="navbar-li">
-                     <NavLink to="/cats" className="nav-link">
+                     <NavLink to="/cats" aria-label="Cats" className="nav-link">
                         <FaPaw className="icon-img" />
                         <span className="link-text">Cats</span>
                     </NavLink>
                 </li>
 
                 <li className="navbar-li">
-                    <NavLink to="/about" className="nav-link">
+                    <NavLink to="/about" aria-label="About" className="nav-link">
                         <FaShieldCat className="icon-img" />
                         <span className="link-text">About</span>
                     </NavLink>
                 </li>
 
                  <li className="navbar-li">
-                    <NavLink to="/contacts" className="nav-link">
+                    <NavLink to="/contacts" aria-label="Contacts" className="nav-link">
                         <FaEnvelope className="icon-img" />
                         <span className="link-text">Contacts</span>
                     </NavLink>
