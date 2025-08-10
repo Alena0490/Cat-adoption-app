@@ -1,9 +1,10 @@
 .cats {
     width: 100%;
+    background-color: var(--bg-secondary-dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
+    padding: 10px 10px 4rem;
 }
 
 .cats h1 {

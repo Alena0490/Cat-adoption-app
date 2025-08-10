@@ -8,5 +8,5 @@
 .faq h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: var(--text-primary);
+    color: var(--text-muted);
 }

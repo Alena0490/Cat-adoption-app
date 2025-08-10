@@ -36,7 +36,7 @@ const Cats = () => {
     });
 
   return (
-    <div className="cats">
+    <div className="cats page">
         <h1>Cats for adoption</h1>
         <div className="filters">
             <select value={sex} onChange={(e) => setSex(e.target.value)} aria-label="Sex">
