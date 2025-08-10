@@ -1,0 +1,107 @@
+.one-cat {
+    max-width: 280px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.one-cat img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.one-cat h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: var(--icon-primary);
+}
+
+.one-cat p {
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.cat-details {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+}
+
+.cat-details p {
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.cat-details p.status-available span{
+    color: var(--color-success-light);
+    font-weight: 700;
+}
+
+h2 .sex-icon {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    margin-bottom: -0.5rem;
+}
+
+.icon-male {
+    color: var(--color-info); 
+}
+.icon-female {
+    color: var(--icon-primary); 
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.buttons button {
+    background-color: var(--icon-secondary);
+    color: var(--text-secondary);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all var(--transition-speed) var(--transition-timing);
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    transform: scale(1.04);
+}
+
+.buttons .donate-button {
+    background-color: var(--text-secondary);
+    color: var(--bg-primary);
+}
+
+.buttons .donate-button:hover {
+    background-color: var(--text-primary);
+}
+
+.buttons .adopt-button.disabled {
+    filter: grayscale(100%);
+    opacity: 0.9;
+}
+
+.buttons .adopt-button.disabled:hover {
+    background-color: var(--icon-secondary);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.buttons .adopt-button:hover {
+    background-color: var(--icon-primary);
+}

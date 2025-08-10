@@ -1,0 +1,40 @@
+.cats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cats h1 {
+    color: var(--icon-secondary);
+    display: block;
+}
+
+.filters {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+select {
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border: 1px solid #3a3a46;
+  border-radius: 0.5rem;
+}
+
+.cats-list {
+    margin: 0% auto;
+    display: flex;
+   flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+}
+

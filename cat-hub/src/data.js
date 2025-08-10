@@ -1,10 +1,23 @@
+import image1 from "./images/cats/misty.webp";
+import image2 from "./images/cats/oliver.webp";
+import image3 from "./images/cats/luna.webp";   
+import image4 from "./images/cats/biscuit.webp";
+import image5 from "./images/cats/daisy.webp";
+import image6 from "./images/cats/milo.webp";
+import image7 from "./images/cats/bella.webp";      
+import image8 from "./images/cats/muffin.webp";
+import image9 from "./images/cats/snowball.webp";
+import image10 from "./images/cats/max.webp";
+import image11 from "./images/cats/nela.webp";
+import image12 from "./images/cats/pumpkin.webp";
+
 // src/data.js
 const cats = [
   {
     id: 1,
-    image: "/images/cats/misty.webp",
+    image: image1,
     name: "Misty",
-    description: "Sweet and gentle cat who loves sunny naps and gentle cuddles",
+    description: "Sweet and gentle cat who loves sunny naps and cuddles",
     sex: "Female",
     age: "2 years",
     breed: "Domestic shorthair",
@@ -13,9 +26,9 @@ const cats = [
   },
   {
     id: 2,
-    image: "/images/cats/oliver.webp",
+    image: image2,
     name: "Oliver",
-    description: "Playful explorer who enjoys chasing toys and climbing high places.",
+    description: "An explorer who enjoys chasing toys and climbing high places.",
     sex: "Male",
     age: "1 year",
     breed: "Tabby mix",
@@ -24,7 +37,7 @@ const cats = [
   },
   {
     id: 3,
-    image: "/images/cats/luna.webp",
+    image: image3,
     name: "Luna",
     description: "Shy at first but turns into a loving lap cat once she trusts you.",
     sex: "Female",
@@ -35,7 +48,7 @@ const cats = [
   },
   {
     id: 4,
-    image: "/images/cats/biscuit.webp",
+    image: image4,
     name: "Biscuit",
     description: "Loves chasing toys and climbing cat trees.",
     sex: "Male",
@@ -46,7 +59,7 @@ const cats = [
   },
   {
     id: 5,
-    image: "/images/cats/daisy.webp",
+    image: image5,
     name: "Daisy",
     description: "Loves chin scratches and curling up in warm, cozy spots.",
     sex: "Female",
@@ -57,7 +70,7 @@ const cats = [
   },
   {
     id: 6,
-    image: "/images/cats/milo.webp",
+    image: image6,
     name: "Milo",
     description: "Energetic and loves to explore every corner of the house.",
     sex: "Male",
@@ -68,7 +81,7 @@ const cats = [
   },
   {
     id: 7,
-    image: "/images/cats/bella.webp",
+    image: image7,
     name: "Bella",
     description: "Kind-hearted and gentle, great with children and other pets.",
     sex: "Female",
@@ -79,18 +92,18 @@ const cats = [
   },
   {
     id: 8,
-    image: "/images/cats/muffin.webp",
+    image: image8,
     name: "Muffin",
     description: "Social cuddle bug who would love a home with another pet.",
     sex: "Male",
     age: "3 months",
-    breed: "Tabby",
+    breed: "Tabby mix",
     castration: true,
     adopted: false,
   },
   {
     id: 9,
-    image: "/images/cats/snowball.webp",
+    image: image9,
     name: "Snowball",
     description: "Quiet and calm, loves to sit by the window and watch the world.",
     sex: "Male",
@@ -101,9 +114,9 @@ const cats = [
   },
   {
     id: 10,
-    image: "/images/cats/max.webp",
+    image: image10,
     name: "Max",
-    description: "Curious black cat who loves chasing toys and curling up in your lap.",
+    description: "Curious black cat who loves curling up in your lap.",
     sex: "Male",
     age: "2 years",
     breed: "Black cat",
@@ -112,7 +125,7 @@ const cats = [
   },
   {
     id: 11,
-    image: "/images/cats/nela.webp",
+    image: image11,
     name: "Nela",
     description: "Affectionate and sweet, always ready for playtime or a nap.",
     sex: "Female",
@@ -123,11 +136,11 @@ const cats = [
   },
   {
     id: 12,
-    image: "/images/cats/pumpkin.webp",
+    image: image12,
     name: "Pumpkin",
     description: "Curious food lover who enjoys belly rubs and chasing his tail.",
     sex: "Male",
-    age: "7 Months",
+    age: "7 months",
     breed: "Orange",
     castration: true,
     adopted: true,
