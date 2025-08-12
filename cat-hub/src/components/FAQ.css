@@ -1,12 +1,12 @@
 .faq {
     background-color: var(--bg-secondary);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .faq h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     color: var(--text-muted);
 }

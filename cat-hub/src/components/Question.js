@@ -10,7 +10,7 @@ const Question = ({ id, question, answer }) => {
             <section>
                 <h3 className='questionH3'>{question}</h3>
                 <button 
-                    className='toggle-button' 
+                    className='toggle-button btn' 
                     aria-label="Show answer"
                     aria-expanded={isOpen}
                     aria-controls={`ans-${id}`}

@@ -17,7 +17,7 @@ const OneCat = ({ cat }) => {
             loading="lazy"
             sizes="(max-width: 600px) 100vw, 400px" 
         />
-        
+
         <h2 className="cat-name">
             {name}{' '}
             {sex === 'Male' ? (
@@ -42,14 +42,14 @@ const OneCat = ({ cat }) => {
 
       <div className="buttons">
         <button 
-            className="donate-button" 
+            className="donate-button btn" 
             type="button" 
             // onClick={()=>openDonate(cat.id)}
         >
             Buy treats (€3)
         </button>
          <button
-          className={`adopt-button${adopted ? ' disabled' : ''}`}
+          className={`adopt-button${adopted ? ' disabled' : ''} btn`}
           type="button"
           disabled={adopted}
           aria-disabled={adopted}

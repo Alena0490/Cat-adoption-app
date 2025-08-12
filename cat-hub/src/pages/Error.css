@@ -41,7 +41,6 @@
 
 .error h1 {
     text-align: center;
-    font-size: clamp(2rem, 1.25rem + 2.5vw, 3rem);
     color: var(--icon-secondary);
     margin: 1rem;  
 }
@@ -59,14 +58,13 @@
 
 .error-actions {
     position: absolute;
-    left: clamp(32px, 10vw, 96px);
-    bottom: calc(var(--footer-h,64px) + 12px);
+    left: clamp(2rem, 10vw, 6rem);
+    bottom: calc(var(--footer-h) + 0.75rem);
     display: flex;
     gap: .5rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* margin-top: auto;   */
     padding-bottom: 2rem;
 }
 
@@ -74,8 +72,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: .6rem 1rem;
-    border-radius: .5rem;
+    padding: clamp(2rem, 6vw, 4rem);
+    border-radius: var(--radius-sm);
     border: 1px solid var(--bg-primary-light);
     background: var(--bg-primary);
     color: var(--text-secondary);
@@ -110,11 +108,11 @@
     transform: scale(1.04);
 }
 
-.err-actions .btn-secondary {
+.error-actions .btn-secondary {
     background: transparent;
     border-color: var(--bg-primary-light);
 }
-.err-actions .btn.link {
+.error-actions .btn.link {
     background: transparent;
     border: 1px dashed var(--bg-primary-light);
 }
@@ -132,7 +130,7 @@
         background-position: 60% center;
     }
 
-    .error::before {
+    .error::after {
         background: linear-gradient(
         90deg,
         rgba(0,0,0,.65) 0%,

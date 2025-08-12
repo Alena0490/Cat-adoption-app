@@ -4,10 +4,20 @@
     font-family: "Open Sans", sans-serif;
 
     /* Text colors */
-  --text-primary: #f5f5f5;
-  --text-secondary: #ececec;
-  --text-muted: #b0b0b0;
-  --text-inverse: #141418;
+  /* Light-on-dark (světlé texty na tmavém pozadí) */
+--text-primary:   #f5f5f5;
+--text-secondary: #ececec;
+--text-muted:     #b0b0b0;
+--text-soft:      #8a8a8c;
+--text-disabled:  #b3b5bd;
+--text-strong:    #ffffff;
+
+/* Dark-on-light (tmavé texty na světlém pozadí) = inverse */
+--text-inverse:          #141418; /* základ */
+--text-inverse-muted:    #1A1B1F; /* o kousek světlejší než základ */
+--text-inverse-soft:     #2A2B31; /* jemně „odstoupený“ text/sekundární */
+--text-inverse-strong:   #0D0E12; /* extra důraz (nadpisy/číslovky) */
+--text-inverse-disabled: #B3B5BD; /* disabled na světlém pozadí */
 
   /* Background colors */
   --bg-primary: #23232e;
@@ -41,14 +51,46 @@
   --color-info: #2196f3;
   --color-info-light: #64b5f6;
 
- /*Transition*/
+    --bg-page: #f6f7f9;        /* velmi světlé pozadí stránky */
+    --surface-1: #ffffff;      /* základní „karta / box“ */
+    --surface-2: #f2f3f7;      /* druhotný povrch (header boxu, zvýraznění) */
+    --surface-3: #e9ebf2;      /* nejtmavší světlý povrch (oddělovače, proužky) */
+
+    --border: #e4e6ed;         /* standardní rámeček */
+    --border-muted: #edeff5;   /* hodně jemný rámeček */
+    --border-strong: #cfd3df;  /* výraznější rámeček / divider */
+
+    --overlay-300: rgba(20, 20, 24, .30); /* jemný overlay */
+    --overlay-600: rgba(20, 20, 24, .60); /* silnější overlay */
+
+    --focus-ring: #df49a6;     /* prstenec focusu (ladí s --icon-secondary) */
+
+    /* jemné akcentní podklady k růzové */
+    --accent-secondary-weak-bg: #fde6f2;  /* k --icon-secondary (#df49a6) */
+    --accent-secondary-border: #f3a7cf;
+
+    --accent-primary-weak-bg: #ffe6fb;    /* k --icon-primary (#ff7eee) */
+    --accent-primary-border: #ffc8f5;
+
+    /*Transition*/
     --transition-speed: 0.3s;
     --transition-timing: ease-out;
 
     /* Hights */
     --bottom-bar-h: 4rem; 
     --footer-h: 3.5rem; 
+
+    --s-1:.5rem; --s-2:.75rem; --s-3:1rem; --s-4:1.5rem; --s-5:2rem;
+    --radius-sm:.5rem; --radius-md:.75rem;
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0,0,0,.1);
+    -shadow-md: 0 0.5rem 1.125rem rgba(0,0,0,.18);
+
+    /* Radius */
+    --radius-lg: 0.625rem;   /* 10px */
+    --radius-sm: 0.3125rem;  /* 5px  */
 }
+
+
 
 * {
     margin: 0;
@@ -87,12 +129,68 @@ h1 {
     color: var(--icon-secondary);
     margin: 1rem;
     font-size: clamp(2rem, 1.25rem + 2.5vw, 3rem);
+    line-height: 1.2;
+    text-align: center;
+}
+
+h2 { 
+    font-size: clamp(1.25rem, 1rem + 1.4vw, 1.75rem); 
+    line-height: 1.25; 
+    color: var(--text-muted); 
+}
+
+h3 { 
+    font-size: clamp(1.0625rem, .95rem + .6vw, 1.25rem); 
+    line-height: 1.25; 
 }
 
 p {
-    max-width: 950px;
+    max-width: 59.375rem;
     margin: 1rem 0;
     text-align: left;
+}
+
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: .3rem .6rem; min-height: 2.75rem;  /* ~44px tappable */
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--bg-primary-light);
+    background: var(--bg-primary); color: var(--text-secondary);
+    font-weight: 600; text-decoration: none; cursor: pointer;
+    transition: transform var(--transition-speed) var(--transition-timing),
+                background-color var(--transition-speed) var(--transition-timing),
+                border-color var(--transition-speed) var(--transition-timing);
+}
+
+.btn:hover  { 
+    transform: scale(1.04); 
+    background: var(--bg-primary-light); 
+}
+
+.btn:active { 
+    transform: scale(.98); 
+}
+
+.btn:focus-visible { 
+    outline: 2px solid var(--icon-secondary); 
+    outline-offset: 2px; 
+}
+
+/* variants */
+.btn-primary   { 
+    background: var(--icon-secondary); 
+    border-color: transparent; 
+    color: #111; 
+}
+
+.btn-secondary { 
+    background: transparent; 
+    border-color: var(--bg-primary-light); 
+}
+
+.btn-ghost     { 
+    background: transparent; 
+    border: 1px dashed var(--bg-primary-light); 
 }
 
 

@@ -1,0 +1,124 @@
+.about-intro,
+.conditions,
+.about .faq {
+  max-width: 1100px;      
+  margin-inline: auto;   /* centrování */
+}
+
+.about-intro {
+  max-width: 1100px;
+  margin: 0 auto clamp(1.25rem, 3vw, 2rem);
+  padding: 1.5rem; 
+  padding-left: 1rem;  
+  border-left: 0.25rem solid var(--icon-secondary);
+}
+
+.about-intro h1 { 
+    margin: 0 0 .5rem; 
+}
+
+.about-intro .lead {
+    color: var(--text-inverse);          
+    font-size: 1.125rem;
+    line-height: 1.55;
+    margin: 0 0 .5rem;
+}
+
+.about-intro p {
+    color: var(--text-inverse-muted);       
+    line-height: 1.5;
+    max-width: 60ch;                      
+    margin: 0;                                  
+}
+
+.about a { 
+    color: var(--icon-secondary); 
+}
+
+.about a:hover { 
+    color: var(--icon-primary);
+}
+
+.conditions { 
+    max-width: 1100px; 
+    margin-inline: auto; 
+}
+
+.conditions h2 {
+    margin: 0 0 .75rem;
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 20px);
+    align-items: stretch; 
+     margin: 0 0 2rem;
+    padding: 0; 
+    list-style: none; 
+}
+
+.cond-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-primary-light);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform var(--transition-speed) var(--transition-timing),
+                box-shadow var(--transition-speed) var(--transition-timing);
+
+            }
+
+.cond-card:hover {
+    transform: scale(var(--hover-scale, 1.04));
+    box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+.cond-card h3 { 
+    margin: 0 0 .25rem; 
+    color: var(--text-primary);
+}
+
+.cond-card p  { 
+    margin: 0; 
+    color: var(--text-secondary); 
+    font-size: clamp(.95rem, .85rem + .4vw, 1.05rem);
+    line-height: 1.35; 
+}
+
+.about .faq {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 1.25rem;                         
+    border-radius: 0.625rem;                   
+    box-shadow: var(--shadow-sm, 0 2px 4px rgba(0,0,0,.1));
+    background-color: var(--bg-secondary);
+}
+
+.about .faq h2 { 
+    margin: 0 0 .75rem; 
+    color: var(--text-muted); 
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cond-card { 
+        transition: none; 
+    }
+
+    .cond-card:hover { 
+        transform: none; 
+    }
+}
+
+@media (max-width: 600px) {
+  .conditions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-intro {
+     padding: 1rem; 
+     padding-left: .75rem;
+    }
+}

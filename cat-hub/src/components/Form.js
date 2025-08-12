@@ -53,7 +53,7 @@ const  Form = () => {
                 />
                 {touched.message && !message && <small id="msg-err" role="alert">Message can’t be empty.</small>}
 
-                <input type="submit" value="Send a message" />
+                <input type="submit" value="Send a message" className="btn" />
             </form> 
         </article>       
     )
