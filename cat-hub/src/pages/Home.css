@@ -52,12 +52,13 @@ section.hero {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: url("../images/heading-photo1.webp");
-    position: relative;     /* ukotví ::after k .hero */
-    z-index: 0;             /* vytvoří vlastní stacking context */
+    background: url("../images/heading-photo6.webp");
+    position: relative;     
+    z-index: 0;            
     overflow: hidden;
     background-size: cover;
-    background-position: center center;
+    background-position: left 60% center;
+    box-shadow: var(--shadow-md);
 }
 
 .hero::after {
@@ -67,10 +68,11 @@ section.hero {
     background: linear-gradient(
         90deg,
         color-mix(in srgb, var(--bg-primary-light) 90%, black) 0%,  /* tmavší odstín bg-primary */
-        color-mix(in srgb, var(--bg-primary-light) 60%, black) 40%, /* jemnější tón */
+        color-mix(in srgb, var(--bg-primary-light) 60%, black) 50%, /* jemnější tón */
         rgba(0,0,0,0) 70%                                     /* průhledno vpravo */
     );
     pointer-events: none;
+/* border-bottom: 1px solid var(--bg-primary-light); */
 }
 
 .hero h1 {
@@ -101,6 +103,24 @@ p.introduction {
     min-width: 150px;
     text-align: center;
     z-index: 2;
+}
+
+a.scroll-down {
+    z-index: 3;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    text-decoration: none;
+    margin: 0.5rem;
+    font-size: 4rem;
+    color: var(--text-soft);
+    transition: all var(--transition-speed) var(--transition-timing);
+}
+
+a.scroll-down:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
 }
 
 .img-fade {
@@ -234,4 +254,35 @@ p.introduction {
     section.hero {
         background-position: left 60% center;
     }
+
+    section.hero::after {
+        background: linear-gradient(90deg,
+        color-mix(in srgb, var(--bg-primary-light) 90%, black) 0%, /* tmavší odstín bg-primary */
+        color-mix(in srgb, var(--bg-primary-light) 31%, black) 40%, /* jemnější tón */ rgba(0, 0, 0, 0) 70% /* průhledno vpravo */);
+    }
 }
+
+@media (max-width: 480px) {
+    section.hero {
+        align-items: center;
+    }
+
+    section.hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--bg-primary-light) 90%, black) 0%,
+            color-mix(in srgb, var(--bg-primary-light) 31%, black) 90%,
+            rgba(0, 0, 0, 0) 100%
+            );
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+

@@ -96,6 +96,7 @@
 
 html {
     scroll-behavior: smooth; 
+    overflow-x: hidden
 }
 
 * {
@@ -107,6 +108,7 @@ html {
 body {
     background-color: #f0f0f0;
     color: rgb(12, 12, 12);
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {

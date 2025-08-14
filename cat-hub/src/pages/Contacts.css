@@ -268,6 +268,12 @@ a.icon {
     font-style: italic;
 }
 
+#volunteer {
+    background: 
+    linear-gradient(to left, transparent 0%, var(--bg-primary-light) 47%), 
+    url('../images/volunteer2.webp') right center / contain no-repeat;
+}
+
 #volunteer h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
