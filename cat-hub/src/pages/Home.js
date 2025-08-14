@@ -12,10 +12,10 @@ const Home = () => {
                 <p className="introduction">Your one-stop destination for&nbsp;adopting cats.</p>
                 <div className="hero-cta">
                     <a href="/cats" className="btn btn-primary">Adopt a Cat</a>
-                    <a href="/contacts" className="btn btn-secondary">Support Us</a>
+                    <a href="/contacts#donate" className="btn btn-secondary">Support Us</a>
                 </div>
                 <a href="#mission" className="scroll-down" aria-label="scroll down to content">
-                    <FaAnglesDown className="scroll-down" />
+                    <FaAnglesDown className="scroll-icon" />
                 </a>
             </section>
             <section className="mission page" id="mission" aria-label="our-mission">

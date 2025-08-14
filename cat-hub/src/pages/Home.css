@@ -61,6 +61,12 @@ section.hero {
     box-shadow: var(--shadow-md);
 }
 
+.light-theme section.hero {
+  background-image: url('../images/heading-photo7.webp');
+  background-size: contain;
+  background-position: right center;
+}
+
 .hero::after {
     content: "";
     position: absolute;
@@ -73,6 +79,18 @@ section.hero {
     );
     pointer-events: none;
 /* border-bottom: 1px solid var(--bg-primary-light); */
+}
+
+.light-theme .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--bg-primary-light) 90%, rgb(44, 44, 44)) 0%,  /* tmavší odstín bg-primary */
+        color-mix(in srgb, var(--bg-primary-light) 60%, rgb(179, 179, 179)) 30%, /* jemnější tón */
+        rgba(255, 255, 255, 0) 50%                                     /* průhledno vpravo */
+    );
 }
 
 .hero h1 {
@@ -113,12 +131,15 @@ a.scroll-down {
     bottom: 0;
     text-decoration: none;
     margin: 0.5rem;
+}
+
+.scroll-icon {
     font-size: 4rem;
     color: var(--text-soft);
     transition: all var(--transition-speed) var(--transition-timing);
 }
 
-a.scroll-down:hover {
+a.scroll-down:hover .scroll-icon {
     color: var(--text-primary);
     transform: scale(1.1);
 }

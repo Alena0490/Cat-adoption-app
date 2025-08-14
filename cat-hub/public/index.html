@@ -7,5 +7,15 @@
 </head>
 <body>
   <div id="result"></div>
+
+    <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');         // 'light' | 'dark' | null
+        if (saved === 'light') document.documentElement.classList.add('light-theme');
+        else document.documentElement.classList.remove('light-theme'); // default dark
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>

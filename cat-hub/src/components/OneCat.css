@@ -86,7 +86,7 @@ h2 .sex-icon {
 }
 
 .buttons button {
-    background-color: var(--icon-secondary);
+    background-color: var(--button-primary);
     color: var(--text-secondary);
     border: none;
     padding: 0.5rem 1rem;
@@ -117,13 +117,13 @@ h2 .sex-icon {
 }
 
 .buttons .adopt-button.disabled:hover {
-    background-color: var(--icon-secondary);
+    background-color: var(--button-primary);
     cursor: not-allowed;
     transform: none;
 }
 
 .buttons .adopt-button:hover {
-    background-color: var(--icon-primary);
+    background-color: var(--button-secondary);
 }
 
 @media (max-width: 668px) {

@@ -1,0 +1,47 @@
+/* Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-600, rgba(20,20,24,.60));
+  z-index: 100;            /* > navbar */
+  display: grid;
+  place-items: stretch;    /* panel se zarovná vpravo (viz níž) */
+}
+
+/* SETTINGS SIDEBAR */
+.settings-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(90vw, 380px);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-left: 1px solid var(--bg-primary-lighter);
+  box-shadow: var(--shadow-strong, 0 6px 14px rgba(0,0,0,.55));
+  padding: var(--s-4, 1.5rem);
+  transform: translateX(100%);
+  animation: slide-in var(--transition-speed, .3s) var(--transition-timing, ease-out) forwards;
+}
+
+/* Close button */
+.settings-close {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+}
+
+/* Open settings*/
+@keyframes slide-in {
+  to { transform: translateX(0); }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .settings-sidebar { padding: 1rem; }
+}

@@ -46,7 +46,7 @@ const OneCat = ({ cat }) => {
             type="button" 
             // onClick={()=>openDonate(cat.id)}
         >
-            Buy treats (€3)
+            Buy dinner (€5)
         </button>
          <button
           className={`adopt-button${adopted ? ' disabled' : ''} btn`}
