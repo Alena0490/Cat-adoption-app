@@ -12,6 +12,10 @@
     display: block;
 }
 
+.cats p.section-lead {
+    margin:  2rem 2rem 0;
+}
+
 .filters {
     width: 100%;
     display: grid;

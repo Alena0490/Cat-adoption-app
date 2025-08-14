@@ -16,12 +16,12 @@ const About = () => {
             <section className="" aria-labelledby="about-title">
                 <h1 id="about-title">About Us</h1>
                 <div className="about-intro" aria-labelledby="about-title">           
-                    <p className="lead">
-                        We connect cats with responsible adopters and provide the care they need along the way.
+                    <p className="lead section-lead">
+                        We connect cats with responsible adopters and provide the&nbsp;care they need along the way.
                     </p>
                     <p>
                         <strong>How we work:</strong> we assess each cat’s health and temperament, place them in foster care when needed,
-                        and prepare them for adoption (vaccines, deworming, microchip, and spay/neuter when age-appropriate). You’ll find our Adoption Conditions below and a FAQ at the end of this page.
+                        and prepare them for adoption (vaccines, deworming, microchip, and&nbsp;spay/neuter when age-appropriate). You’ll find our Adoption Conditions below and a FAQ at the end of this page.
                     </p>
                 </div>
             </section>

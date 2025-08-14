@@ -21,20 +21,20 @@ const tried = `${pathname}${search || ""}`;
                 404 - Page Not Found
             </h1>
             <p className="err-text">
-                Sorry, the page <code className="err-path">{tried}</code> doesn’t exist or was moved.
+                Sorry, the&nbsp;page <code className="err-path">{tried}</code> doesn’t exist or&nbsp;was moved.
             </p>
             <div className="error-actions">
                 <button type="button" className="btn" onClick={() => navigate(-1)}>
                     Go back
                 </button>
                 <Link to="/" className="btn btn-primary">
-                    Go to Home
+                    Go to&nbsp;Home
                 </Link>
                 <Link to="/cats" className="btn btn-secondary">
                     See cats
                 </Link>
                 <Link to="/contacts" className="btn link">
-                    Contact us
+                    Contact&nbsp;us
                 </Link>
             </div>
         </div>

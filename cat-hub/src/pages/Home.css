@@ -53,13 +53,30 @@ section.hero {
     justify-content: center;
     align-items: flex-start;
     background: url("../images/heading-photo1.webp");
+    position: relative;     /* ukotví ::after k .hero */
+    z-index: 0;             /* vytvoří vlastní stacking context */
+    overflow: hidden;
     background-size: cover;
     background-position: center center;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--bg-primary-light) 90%, black) 0%,  /* tmavší odstín bg-primary */
+        color-mix(in srgb, var(--bg-primary-light) 60%, black) 40%, /* jemnější tón */
+        rgba(0,0,0,0) 70%                                     /* průhledno vpravo */
+    );
+    pointer-events: none;
 }
 
 .hero h1 {
     text-align: center;
     width: 50%;
+    z-index: 2;
 }
 
 p.introduction {
@@ -68,23 +85,149 @@ p.introduction {
     font-size: 1.5rem;
     color: var(--text-secondary);
     margin: 1rem 0.9rem;
+    z-index: 2;
+}
+
+.hero-cta {
+    width: 50%;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap; 
+    }
+
+.hero-cta .btn {
+    min-width: 150px;
+    text-align: center;
+    z-index: 2;
+}
+
+.img-fade {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.fade-image {
+  position: relative;
+  display: block;
+}
+
+.fade-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, var(--bg-secondary) 100%);
 }
 
 .mission {
     width: 100%;
     padding: 2rem;
-    background-color: var(--bg-secondary);
+    padding-left: 4rem;
+    /* background-color: var(--bg-secondary); */
     font-size: 1.2rem;
     line-height: 1.4;
     color: var(--text-primary);
     text-align: center;
 }
 
+#mission {
+    background: 
+    linear-gradient(to left, transparent 0%, var(--bg-secondary) 40%), 
+    url('../images/mission.webp') right center / contain no-repeat;
+}
+
+#adoption {
+    background: 
+    linear-gradient(to right, transparent 0%, var(--bg-primary-light) 42%), 
+    url('../images/adoption.webp') -4rem center / contain no-repeat;
+}
+
+#adoption h2 {
+    color: var(--text-strong);
+    text-shadow: var(--shadow-strong);
+    margin-left: auto;
+}
+
+#adoption p {
+    margin-left: auto;
+}
+
 .mission h2 {
-    font-size: 2rem;
-    text-align: left;
     color: var(--text-muted);
     margin-bottom: 1rem;
+}
+
+.mission--alt {
+    background-color: var(--bg-primary-light);
+    color: var(--text-secondary);
+}
+
+.mini-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    margin-block: 2rem;
+}
+
+.mini-icons a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.mini-icons a:hover {
+    background-color: color-mix(in srgb, var(--icon-primary) 8%, transparent);
+    border-color: var(--icon-primary);
+    transform: translateY(-2px);
+    transform: scale(1.1) translateZ(0); 
+    filter: drop-shadow(0 0 4px rgba(214, 106, 200, 0.6));
+}
+
+.mini-icons svg {
+    font-size: 1.5rem; 
+    min-width: 2rem;
+    color: var(--icon-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.mini-icons:hover svg {
+    color: var(--icon-primary-dark);
+}
+
+.mini-icons p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+@media (max-width: 1400px) {
+    #mission {
+    background: var(--bg-secondary)
+    }
+
+    #adoption {
+        background: var(--bg-primary-light);
+    }  
+
+    #adoption p {
+        margin-left: 0rem;
+}
 }
 
 @media (max-width: 600px) {

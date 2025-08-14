@@ -43,6 +43,10 @@
     color var(--transition-speed) var(--transition-timing);
 }
 
+.footer .socials a svg {
+    font-size: 1.5rem;
+}
+
 .footer .socials a:hover {
     color: var(--icon-primary);
     transform: scale(var(--hover-scale, 1.04));

@@ -19,7 +19,7 @@
 
 .about-intro .lead {
     color: var(--text-inverse);          
-    font-size: 1.125rem;
+    /* font-size: 1.125rem; */
     line-height: 1.55;
     margin: 0 0 .5rem;
 }
@@ -29,6 +29,10 @@
     line-height: 1.5;
     max-width: 60ch;                      
     margin: 0;                                  
+}
+
+.about-intro strong {
+    color: var(--text-inverse-strong);
 }
 
 .about a { 

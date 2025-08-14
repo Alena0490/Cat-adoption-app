@@ -2,7 +2,7 @@
     width: 5rem;
     height: 100vh;
     position: fixed;
-    background-color: var(--bg-primary-light);
+    background-color: var(--bg-primary-lighter);
     transition: all var(--transition-speed) var(--transition-timing);
     z-index: 5;
 }
@@ -22,7 +22,7 @@
     margin-bottom: 1rem;
     text-align: center;
     color: var(--text-secondary);
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary-lighter);
     font-size: 1.5rem;
     letter-spacing: 0.3ch;
     width: 100%;
@@ -78,8 +78,9 @@
 .nav-link:hover,
 .nav-link.active {
     filter: grayscale(0%) opacity(1);
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary-light);
     color: var(--bg-secondary);
+    border-right: 1px solid var(--bg-primary-lighter);
 }
 
 .link-text {
@@ -92,6 +93,7 @@
 .nav-link .icon-img,
 .nav-link svg {
     min-width: 2rem;
+    font-size: 1.5rem;
     transition: all var(--transition-speed) var(--transition-timing);
     color: var(--text-primary);
 }
@@ -149,6 +151,7 @@ main {
 
     .link-text { 
         display: none !important; 
+        transition: all var(--transition-speed-fast) var(--transition-timing);
     }
 
     .navbar .nav-link,
@@ -199,7 +202,7 @@ main {
 
     .navbar:hover .link-text {
         display: inline;
-        transition: all var(--transition-speed) var(--transition-timing);
+        transition: all var(--transition-speed-fast) var(--transition-timing);
     }
 }
 

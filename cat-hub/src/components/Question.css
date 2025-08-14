@@ -28,7 +28,7 @@
 
 .question {
     background-color: var(--bg-primary);
-    padding: 1rem;
+    padding: .5rem 1rem;
     margin: 0.5rem;
     border-radius: var(--radius-sm);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -50,7 +50,7 @@
     color: var(--text-secondary);
     border: none;
     /* padding: 0.5rem 0.25rem 0rem; */
-    margin: 0.5rem;
+    margin: 0rem;
     border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: 1.5rem;
