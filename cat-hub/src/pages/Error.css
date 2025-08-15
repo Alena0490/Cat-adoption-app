@@ -15,6 +15,12 @@
     background-position: center center;
 }
 
+.light-theme .error {
+  background-image: url('../images/heading-photo8.webp');
+  background-size: cover;
+  background-position: right center;
+}
+
 .error::after {
     content: "";
     position: absolute;
@@ -23,6 +29,17 @@
     rgba(0,0,0,.60) 0%,
     rgba(0,0,0,.45) 40%,
     rgba(0,0,0,0)   70%);
+    pointer-events: none;
+}
+
+.light-theme .error::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+    rgba(182, 196, 182, 0.6) 0%,
+    rgba(182,182,182,.45) 40%,
+    rgba(182,182,182,0)   70%);
     pointer-events: none;
 }
 
@@ -37,6 +54,14 @@
     text-align: left;
     margin: 0;
     text-shadow: 0 2px 8px rgba(0,0,0,.8);                       
+}
+
+.light-theme .error h1,
+.light-theme .error p {
+    max-width: clamp(320px, 55vw, 720px);
+    text-align: left;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(197, 197, 197, 0.8);                       
 }
 
 .error h1 {
@@ -98,6 +123,12 @@
     box-shadow: 0 10px 22px rgba(0,0,0,.32);
 }
 
+.light-theme .error-actions .btn:hover { 
+    transform: scale(1.04);
+    background: var(--bg-primary-light); 
+    box-shadow: 0 10px 22px rgba(56, 56, 56, 0.32);
+}
+
 .error-actions .btn-primary {
     background: var(--icon-secondary);
     border-color: transparent;
@@ -136,6 +167,15 @@
         rgba(0,0,0,.65) 0%,
         rgba(0,0,0,.55) 60%,
         rgba(0,0,0,0) 100%
+        );    
+    }
+
+    .light-theme .error::after {
+        background: linear-gradient(
+        90deg,
+        rgba(182, 182, 182, 0.65) 0%,
+        rgba(182,182,182,.55) 60%,
+        rgba(182,182,182,0) 100%
         );    
     }
 }
