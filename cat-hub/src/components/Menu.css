@@ -23,7 +23,7 @@
     text-align: center;
     color: var(--text-secondary);
     background-color: var(--bg-primary-lighter);
-    font-size: 1.5rem;
+    font-size: var(--fs-md);
     letter-spacing: 0.3ch;
     width: 100%;
 }
@@ -85,7 +85,7 @@
 
 .link-text {
     display: none;
-    font-size: 1.2rem;
+    font-size: var(--fs-sm);
     margin-left: 1rem;
     color: var(--text-secondary);
 }
@@ -93,7 +93,7 @@
 .nav-link .icon-img,
 .nav-link svg {
     min-width: 2rem;
-    font-size: 1.5rem;
+    font-size: var(--fs-md);
     transition: all var(--transition-speed) var(--transition-timing);
     color: var(--text-primary);
 }

@@ -102,7 +102,7 @@ section.hero {
 p.introduction {
     width: 50%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--fs-lg);
     color: var(--text-secondary);
     margin: 1rem 0.9rem;
     z-index: 2;
@@ -134,7 +134,7 @@ a.scroll-down {
 }
 
 .scroll-icon {
-    font-size: 4rem;
+    font-size: clamp(3rem, 2.5rem + 2vw, 4rem);
     color: var(--text-soft);
     transition: all var(--transition-speed) var(--transition-timing);
 }
@@ -173,7 +173,7 @@ a.scroll-down:hover .scroll-icon {
     padding: 2rem;
     padding-left: 4rem;
     /* background-color: var(--bg-secondary); */
-    font-size: 1.2rem;
+    font-size: var(--fs-md);
     line-height: 1.4;
     color: var(--text-primary);
     text-align: center;
@@ -240,7 +240,7 @@ a.scroll-down:hover .scroll-icon {
 }
 
 .mini-icons svg {
-    font-size: 1.5rem; 
+    font-size: var(--fs-md); 
     min-width: 2rem;
     color: var(--icon-secondary);
     margin-bottom: 0.5rem;
@@ -254,7 +254,7 @@ a.scroll-down:hover .scroll-icon {
     margin: 0;
     font-weight: 600;
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: var(--fs-base);
 }
 
 @media (max-width: 1400px) {

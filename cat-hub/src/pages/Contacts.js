@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Form from "../components/Form";
 import './Contacts.css';
-import qrCode from "../images/QR-code.webp";
+import qrCode from "../images/QR-code2.webp";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaPaw } from "react-icons/fa";

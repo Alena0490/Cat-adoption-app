@@ -72,7 +72,7 @@ a.icon {
 }
 
 .one-contact svg {
-    font-size: 1.2rem;
+    font-size: var(--fs-sm);
     min-width: 2rem;
     color: var(--icon-secondary);
     margin-bottom: 0.2rem;
@@ -113,7 +113,7 @@ a.icon {
 #contact-info {
     width: 100%;
     padding: 2rem 3rem 4rem;
-    font-size: 1.2rem;
+    font-size: var(--fs-sm);
     line-height: 1.4;
     color: var(--text-primary);
     text-align: center;
@@ -143,7 +143,7 @@ a.icon {
 
 #donate h2,
 #volunteer h2 {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     text-align: left;
     color: var(--text-muted);
     margin-bottom: 1rem;
@@ -205,7 +205,7 @@ a.icon {
 
 .payment-info p {
   margin: 0.2rem 0;
-  font-size: 1.1rem;
+  font-size: var(--fs-base);
 }
 
 .payment-info p.info {
@@ -240,7 +240,7 @@ a.icon {
 .payment-info .value {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .02em;
-    font-size: 1.2rem;
+    font-size: var(--fs-sm);
 }
 
 .qr-code {
@@ -263,7 +263,7 @@ a.icon {
 .qr-caption { 
     margin-top: .5rem; 
     color: var(--text-secondary); 
-    font-size: .95rem; 
+    font-size: var(--fs-base); 
     text-align:center; 
     font-style: italic;
 }
@@ -275,18 +275,18 @@ a.icon {
 }
 
 #volunteer h3 {
-    font-size: 1.5rem;
+    font-size: var(--fs-md);
     margin-bottom: 0.5rem;
     margin-top: 2rem;
 }
 
 
 #volunteer p:not(.section-lead) {
-    font-size: 1.25rem;
+    font-size: var(--fs-sm);
 }
 
 .volunteer-list {
-    font-size: 1.25rem;
+    font-size: var(--fs-sm);
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.2rem;
@@ -297,7 +297,7 @@ a.icon {
 
 .volunteer-list .icon {
     color: var(--icon-secondary);
-    font-size: 1.2rem;
+    font-size: var(--fs-sm);
     margin-right: 0.5rem;
     vertical-align: middle;
 }

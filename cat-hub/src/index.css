@@ -93,6 +93,14 @@
     /* Radius */
     --radius-lg: 0.625rem;   /* 10px */
     --radius-sm: 0.3125rem;  /* 5px  */
+
+    /* Font sizes */
+    --fs-xs: 0.75rem;   /* 12px */
+    --fs-base: 1rem;    /* 16px */
+    --fs-sm: clamp(1.125rem, 1.25rem + 0.2vw, 1.375rem); /* 18px */
+    --fs-md: clamp(1.375rem, 1.5rem + 0.2vw, 1.625rem); /* 22px */
+    --fs-lg: clamp(1.4rem, 1rem + 1.6vw, 1.9rem); /* 24px */
+    --fs-xl: clamp(2.25rem, 1.25rem + 2.8vw, 3.25rem); /* 36px */
 }
 
 :root.light-theme {
@@ -191,15 +199,16 @@ h1 {
   text-align: center;
   color: var(--icon-secondary);
   margin: 1rem;
-  font-size: clamp(2.25rem, 1.25rem + 2.8vw, 3.25rem); /* zvětšeno o ~0.25rem */
+  font-size: var(--fs-xl);
   line-height: 1.2;
 }
 
 h2 { 
-  font-size: clamp(1.4rem, 1rem + 1.6vw, 1.9rem); /* mírně zvětšeno */
-  line-height: 1.25; 
+  font-size: var(--fs-lg);
+  line-height: 1.25rem; 
   color: var(--text-muted); 
   text-align: left;
+  margin-top: 1rem;
 }
 
 h3 { 
@@ -212,7 +221,7 @@ p {
     max-width: 72ch;
     margin: 1rem 0;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: var(--fs-md);
     line-height: 1.4;
     text-wrap: pretty;
 }
@@ -224,7 +233,7 @@ strong {
 
 .section-lead {
     color: var(--text-muted);
-    font-size: 1.5rem;
+    font-size: var(--fs-md);
     line-height: 1.55;
     margin: 0.25rem 0 .5rem;
 }

@@ -36,7 +36,7 @@
 
     text-decoration: none;
     color: var(--icon-secondary);
-    font-size: 1.2rem;
+    font-size: var(--fs-md);
 
     transition:
     transform var(--transition-speed) var(--transition-timing),
@@ -44,7 +44,7 @@
 }
 
 .footer .socials a svg {
-    font-size: 1.5rem;
+    font-size: var(--fs-md);
 }
 
 .footer .socials a:hover {
