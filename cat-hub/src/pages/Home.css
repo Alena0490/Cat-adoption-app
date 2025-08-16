@@ -80,7 +80,6 @@ section.hero {
         rgba(0,0,0,0) 70%                                     /* průhledno vpravo */
     );
     pointer-events: none;
-/* border-bottom: 1px solid var(--bg-primary-light); */
 }
 
 .light-theme .hero::after {
@@ -183,19 +182,22 @@ a.scroll-down:hover .scroll-icon {
 
 #mission {
     background: 
-    linear-gradient(to left, transparent 0%, var(--bg-secondary) 40%), 
+    linear-gradient(to left, transparent 0%, var(--bg-secondary) 55%), 
     url('../images/mission.webp') right center / contain no-repeat;
+}
+
+#mission h2 {
+    margin-top: 0%;
+}
+
+#mission p {
+    max-width: 700px;
 }
 
 #adoption {
     background: 
-    linear-gradient(to right, transparent 0%, var(--bg-primary-light) 42%), 
+    linear-gradient(to right, transparent 0%, var(--bg-primary-light) 55%), 
     url('../images/adoption.webp') -4rem center / contain no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;         /* všechny děti „k pravému okraji“ */
-    gap: 0.5rem;
-    padding-inline: 2rem;          /* trochu dechu od pravého kraje */
 }
 
 #adoption h2 {
@@ -206,6 +208,8 @@ a.scroll-down:hover .scroll-icon {
 
 #adoption p {
     margin-left: auto;
+    margin-right: 0;
+    max-width: 700px;
 }
 
 .mission h2 {
@@ -265,18 +269,22 @@ a.scroll-down:hover .scroll-icon {
     font-size: var(--fs-base);
 }
 
-@media (max-width: 1400px) {
-  #mission {
-    background-color: var(--bg-secondary);   /* dříve: background: var(--bg-secondary) */
-  }
+ @media (max-width: 1400px) {
+    #mission {
+        background: 
+        linear-gradient(to left, transparent 0%, var(--bg-secondary-transparent) 5%), 
+        url('../images/mission.webp') right center / cover no-repeat;
+    }
 
-  #adoption {
-    background-color: var(--bg-primary-light);     
-  }
-}
+    #adoption {
+        background: 
+        linear-gradient(to right, transparent 0%, var(--bg-primary-light-transparent) 5%), 
+        url('../images/adoption.webp') -4rem center / cover no-repeat;
+    }
+} 
 
     #adoption p {
-        margin-left: 0rem;
+        margin-left: auto;
 }
 
 @media (max-width: 900px) {

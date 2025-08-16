@@ -21,12 +21,16 @@
 
   /* Background colors */
   --bg-primary: #23232e;
+  --bg-primary-transparent: #23232ec0;
   --bg-primary-light: #2e2e3a;
+  --bg-primary-light-transparent: #2e2e3ac0;
   --bg-primary-lighter: #464658;
   --bg-primary-dark: #1a1a23;
 
   --bg-secondary: #141418;
+  --bg-secondary-transparent: #141418c0;
   --bg-secondary-light: #1d1d25;
+  --bg-secondary-light-transparent: #1d1d25c0;
   --bg-secondary-dark: #0d0d12;
 
   /* Accent / Icon colors */
@@ -119,12 +123,16 @@
   --text-inverse-disabled: #b3b5bd;
 
   --bg-primary: #f6f7f9;
-  --bg-primary-light: #e9ebf2;
+  --bg-primary-transparent: #f6f7f9b0;
+  --bg-secondary: #ffffff;
+  --bg-secondary-transparent: #ffffffb0;
   --bg-primary-lighter: #c0c2cc;
   --bg-primary-dark: #e9ebf2;
 
   --bg-secondary: #ffffff;
+  --bg-secondary-transparent: #ffffffb0;
   --bg-secondary-light: #f6f7f9;
+  --bg-secondary-light-transparent: #f6f7f9b0;
   --bg-secondary-dark: #e9ebf2;
 
   --icon-primary: #f178bd; 
