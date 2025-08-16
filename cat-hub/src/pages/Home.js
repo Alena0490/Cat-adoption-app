@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className="home">
             <section className="hero">
-                <h1>Welcome to Cat Hub</h1>
+                <h1>Welcome&nbsp;to Cat&nbsp;Hub</h1>
                 <p className="introduction">Your one-stop destination for&nbsp;adopting cats.</p>
                 <div className="hero-cta">
                     <a href="/cats" className="btn btn-primary">Adopt a Cat</a>
@@ -20,7 +20,7 @@ const Home = () => {
             </section>
             <section className="mission page" id="mission" aria-label="our-mission">
                 <h2>Our Mission</h2>
-                <p>We are dedicated to&nbsp;finding loving homes for cats in&nbsp;need. Our mission is to&nbsp;promote cat adoption and&nbsp;provide resources for&nbsp;cat care. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. </p>
+                <p>We are dedicated to&nbsp;finding loving homes for&nbsp;cats in&nbsp;need. Our mission is to&nbsp;promote cat adoption and&nbsp;provide resources for&nbsp;cat care. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. </p>
             </section>
 
             <section className="mission page mission--alt" id="adoption" aria-label="adoption-process">

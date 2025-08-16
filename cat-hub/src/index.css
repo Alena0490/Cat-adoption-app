@@ -87,7 +87,7 @@
     --s-1:.5rem; --s-2:.75rem; --s-3:1rem; --s-4:1.5rem; --s-5:2rem;
     --radius-sm:.5rem; --radius-md:.75rem;
     --shadow-sm: 0 0.125rem 0.25rem rgba(0,0,0,.1);
-    -shadow-md: 0 0.5rem 1.125rem rgba(0,0,0,.18);
+    -shadow-md: 0 0.5rem 1.125rem rgba(0,0,0,.3);
     --shadow-strong: 0 6px 14px rgba(0, 0, 0, .55);
 
     /* Radius */
@@ -97,10 +97,10 @@
     /* Font sizes */
     --fs-xs: 0.75rem;   /* 12px */
     --fs-base: 1rem;    /* 16px */
-    --fs-sm: clamp(1.125rem, 1.25rem + 0.2vw, 1.375rem); /* 18px */
-    --fs-md: clamp(1.375rem, 1.5rem + 0.2vw, 1.625rem); /* 22px */
-    --fs-lg: clamp(1.4rem, 1rem + 1.6vw, 1.9rem); /* 24px */
-    --fs-xl: clamp(2.25rem, 1.25rem + 2.8vw, 3.25rem); /* 36px */
+    --fs-sm: clamp(1rem, 1.25rem + 0.2vw, 1.375rem); /* 18px */
+    --fs-md: clamp(1.175rem, 1.5rem + 0.2vw, 1.625rem); /* 22px */
+    --fs-lg: clamp(1.2rem, 1rem + 1.6vw, 1.9rem); /* 24px */
+    --fs-xl: clamp(2rem, 1.25rem + 2.8vw, 3.25rem); /* 36px */
 }
 
 :root.light-theme {
@@ -152,7 +152,7 @@
   --s-1:.5rem; --s-2:.75rem; --s-3:1rem; --s-4:1.5rem; --s-5:2rem;
     --radius-sm:.5rem; --radius-md:.75rem;
     --shadow-sm: 0 0.125rem 0.25rem rgba(100, 100, 100, 0.1);
-    -shadow-md: 0 0.5rem 1.125rem rgba(100, 100, 100, 0.18);
+    -shadow-md: 0 0.5rem 1.125rem rgba(100, 100, 100, 0.3);
     --shadow-strong: 0 6px 14px rgba(100, 100, 100, 0.55);
 
 }
@@ -293,16 +293,18 @@ strong {
     border: 1px dashed var(--bg-primary-lighter); 
 }
 
+@media (max-width: 900px) {
+    .btn {
+        padding: .2rem .4rem;
+        min-height: 2.25rem;
+    }
+}
 
  @media (max-width: 600px) {
-        main {
-            margin-left: 0% !important;
-            margin: 0%;
-        }
+    main {
+        margin-left: 0% !important;
+        margin: 0%;
     }
-
-@media (min-width: 600px) {
-    
-    }
+}
 
 

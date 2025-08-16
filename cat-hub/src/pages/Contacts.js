@@ -3,9 +3,7 @@ import { useLocation } from "react-router-dom";
 import Form from "../components/Form";
 import './Contacts.css';
 import qrCode from "../images/QR-code2.webp";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
-import { FaPaw } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt,  FaPaw } from "react-icons/fa";
 
 const Contacts = () => {
     
@@ -28,42 +26,44 @@ const { hash } = useLocation();
                 <h2>Contacts</h2>
                 <p className="section-lead">Get in&nbsp;touch with&nbsp;us for any questions about adoption, volunteering, or&nbsp;donations. We’d love to&nbsp;hear from you.</p>
                 <article className="contact-wrapper">
-                    <div className="contact-details card">
-                        <p><strong className="one-contact">
-                            <a className="icon" href="tel:+420123456789" aria-label="Call Cat Hub">
-                                <FaPhoneAlt />
-                            </a>
-                            Phone: </strong> 
+                    <div className="contact-details card" role="list">
+                        <p role="listitem">
+                            <strong>
+                                <span className="icon" aria-hidden="true"><FaPhoneAlt /></span>
+                                Phone:
+                            </strong>
                             <a href="tel:+420123456789" aria-label="Call Cat Hub">
                                 +420 123 456 789
                             </a>
                         </p>
-                        <p>
-                            <strong className="one-contact">
-                            <a className="icon" href="mailto:alenapumprova@seznam.cz" aria-label="Send email to Cat Hub">
-                                <FaEnvelope />
-                            </a>Email: </strong> 
+
+                        <p role="listitem">
+                            <strong>
+                                <span className="icon" aria-hidden="true"><FaEnvelope /></span>
+                                Email:
+                            </strong>
                             <a href="mailto:alenapumprova@seznam.cz" aria-label="Send email to Cat Hub">
                                 alenapumprova@seznam.cz
                             </a>
                         </p>
-                        <p>
+
+                        <p role="listitem">
+                            <span className="icon"><FaMapMarkerAlt /></span>
                             <strong>Address:</strong>
-                             Cat Hub, 123 Cat Street, Cat City, CZ</p>
-                        </div>
-                        <div className="address-map card">                        
-                            {/* <p>Find us on the map:</p> */}
-                            <iframe 
-                                title="Cat Hub Location"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.123456789!2d14.123456789!3d50.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b123456789abc%3A0x123456789abcdefg!2sCat%20Hub%20CZ!5e0!3m2!1sen!2scz!4v1612345678901"
-                                width="500" 
-                                height="400" 
-                                style={{ border: 0 }} 
-                                allowFullScreen="" 
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                            >
-                            </iframe>  
+                            <address>Cat Hub, 123 Cat Street, Cat City, CZ</address>
+                            </p>
+                    </div>
+                    <div className="address-map card">                        
+                        {/* <p>Find us on the map:</p> */}
+                        <iframe 
+                            title="Cat Hub Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.123456789!2d14.123456789!3d50.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b123456789abc%3A0x123456789abcdefg!2sCat%20Hub%20CZ!5e0!3m2!1sen!2scz!4v1612345678901"
+                            style={{ border: 0 }} 
+                            allowFullScreen="" 
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        >
+                        </iframe>  
                     </div>        
                 </article>
             </section>

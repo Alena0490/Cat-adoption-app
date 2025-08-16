@@ -57,13 +57,15 @@ section.hero {
     z-index: 0;            
     overflow: hidden;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: left 60% center;
     box-shadow: var(--shadow-md);
 }
 
 .light-theme section.hero {
   background-image: url('../images/heading-photo7.webp');
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: right center;
 }
 
@@ -189,11 +191,16 @@ a.scroll-down:hover .scroll-icon {
     background: 
     linear-gradient(to right, transparent 0%, var(--bg-primary-light) 42%), 
     url('../images/adoption.webp') -4rem center / contain no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;         /* všechny děti „k pravému okraji“ */
+    gap: 0.5rem;
+    padding-inline: 2rem;          /* trochu dechu od pravého kraje */
 }
 
 #adoption h2 {
     color: var(--text-strong);
-    text-shadow: var(--shadow-strong);
+    text-shadow: var(--shadow-md);
     margin-left: auto;
 }
 
@@ -204,6 +211,7 @@ a.scroll-down:hover .scroll-icon {
 .mission h2 {
     color: var(--text-muted);
     margin-bottom: 1rem;
+    text-shadow: var(--shadow-md);
 }
 
 .mission--alt {
@@ -258,28 +266,79 @@ a.scroll-down:hover .scroll-icon {
 }
 
 @media (max-width: 1400px) {
-    #mission {
-    background: var(--bg-secondary)
-    }
+  #mission {
+    background-color: var(--bg-secondary);   /* dříve: background: var(--bg-secondary) */
+  }
 
-    #adoption {
-        background: var(--bg-primary-light);
-    }  
+  #adoption {
+    background-color: var(--bg-primary-light);     
+  }
+}
 
     #adoption p {
         margin-left: 0rem;
 }
+
+@media (max-width: 900px) {
+
+    .hero h1 {
+        width: 70%;
+    }
+
+    p.introduction {
+        margin: 0rem 0.9rem;
+        width: 70%;
+    }
+
+    .hero-cta {
+        margin-top: 1rem;
+        width: 70%;
+    }
+
+    a.scroll-down {
+        display: none;
+    }
+
 }
 
 @media (max-width: 600px) {
+
     section.hero {
         background-position: left 60% center;
+        height: 95vh;
     }
 
     section.hero::after {
         background: linear-gradient(90deg,
         color-mix(in srgb, var(--bg-primary-light) 90%, black) 0%, /* tmavší odstín bg-primary */
         color-mix(in srgb, var(--bg-primary-light) 31%, black) 40%, /* jemnější tón */ rgba(0, 0, 0, 0) 70% /* průhledno vpravo */);
+    }
+
+    .light-theme section.hero {
+        background-position: 60% center;
+    }
+
+    p.introduction {
+        width: 80%;
+        margin: 1rem 0rem 0.5rem;
+    }
+
+    a.scroll-down {
+        display: none;
+    }   
+
+    .hero-cta {
+        margin-block: 1rem;
+        margin-inline: 0.5rem;
+    }
+
+    .hero-cta .btn {
+        min-width: 120px;
+    }
+
+    .btn {
+        padding: .2rem .4rem;
+        min-height: 2rem;
     }
 }
 
@@ -303,6 +362,15 @@ a.scroll-down:hover .scroll-icon {
             );
             opacity: 0.5;
             pointer-events: none;
+        }
+
+        h1 {
+            font-size: var(--fs-lg);        
+        }
+
+        p.introduction {
+            width: 90%;
+            font-size: var(--fs-sm);
         }
     }
 
