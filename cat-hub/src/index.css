@@ -1,6 +1,7 @@
 
 :root {
-    font-size: 16px;
+    font-size: calc(16px * var(--font-scale, 1));
+    --font-scale: 1;
     font-family: "Open Sans", sans-serif;
 
 /* Text colors */
@@ -79,7 +80,7 @@
     --accent-primary-border: #ffc8f5;
 
     /*Transition*/
-    --transition-speed-fast: 0.2s
+    --transition-speed-fast: 0.2s;
     --transition-speed: 0.3s;
     --transition-speed-slow: 0.4s;
     --transition-timing: ease-out;
@@ -89,9 +90,8 @@
     --footer-h: 3.5rem; 
 
     --s-1:.5rem; --s-2:.75rem; --s-3:1rem; --s-4:1.5rem; --s-5:2rem;
-    --radius-sm:.5rem; --radius-md:.75rem;
     --shadow-sm: 0 0.125rem 0.25rem rgba(0,0,0,.1);
-    -shadow-md: 0 0.5rem 1.125rem rgba(0,0,0,.3);
+    --shadow-md: 0 0.5rem 1.125rem rgba(0,0,0,.3);
     --shadow-strong: 0 6px 14px rgba(0, 0, 0, .55);
 
     /* Radius */
@@ -124,8 +124,6 @@
 
   --bg-primary: #f6f7f9;
   --bg-primary-transparent: #f6f7f9b0;
-  --bg-secondary: #ffffff;
-  --bg-secondary-transparent: #ffffffb0;
   --bg-primary-lighter: #c0c2cc;
   --bg-primary-dark: #e9ebf2;
 
@@ -158,16 +156,16 @@
   --color-info-light: #90caf9;   
 
   --s-1:.5rem; --s-2:.75rem; --s-3:1rem; --s-4:1.5rem; --s-5:2rem;
-    --radius-sm:.5rem; --radius-md:.75rem;
     --shadow-sm: 0 0.125rem 0.25rem rgba(100, 100, 100, 0.1);
     -shadow-md: 0 0.5rem 1.125rem rgba(100, 100, 100, 0.3);
     --shadow-strong: 0 6px 14px rgba(100, 100, 100, 0.55);
 
 }
 
-html {
+html, body {
     scroll-behavior: smooth; 
-    overflow-x: hidden
+    overflow-x: hidden;
+    background-color: var(--bg-secondary);
 }
 
 * {
@@ -177,8 +175,8 @@ html {
 }
 
 body {
-    background-color: #f0f0f0;
-    color: rgb(12, 12, 12);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     overflow-x: hidden;
 }
 

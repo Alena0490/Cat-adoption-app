@@ -5,6 +5,23 @@
     background-color: var(--bg-primary-lighter);
     transition: all var(--transition-speed) var(--transition-timing);
     z-index: 5;
+     overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    white-space: nowrap;     /* drž položky v řádku */
+    scrollbar-gutter: stable both-edges;
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+.navbar::-webkit-scrollbar-track {
+    background-color: #1e1e24;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background-color: #6649b8;
 }
 
 .navbar ul {

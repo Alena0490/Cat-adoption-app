@@ -1,3 +1,4 @@
+
 .error {
     --footer-h: 64px; 
     position: relative;
@@ -151,6 +152,12 @@
 .error-actions .btn:focus-visible { 
     outline: 2px solid var(--icon-secondary); 
     outline-offset: 2px; 
+}
+
+@media screen and (max-width: 900px) {
+    .error {
+        min-height: 95vh;
+    }
 }
 
 @media  screen and (max-width: 600px) {

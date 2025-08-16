@@ -12,6 +12,21 @@
     color: var(--text-secondary);
 }
 
+.contacts.page a {
+    color: var(--icon-secondary);
+    transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.contacts.page a:hover {
+    color: var(--icon-primary);
+}
+
+.section-lead {
+    color: var(--text-secondary);
+    margin-top: .25rem;
+    max-width: 70ch;
+}
+
 #contact-info {
     background-color: var(--bg-primary-light);
     padding-left: 1rem;

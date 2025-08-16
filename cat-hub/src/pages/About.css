@@ -18,21 +18,21 @@
 }
 
 .about-intro .lead {
-    color: var(--text-inverse);          
+    color: var(--text-secondary);          
     /* font-size: 1.125rem; */
     line-height: 1.55;
     margin: 0 0 .5rem;
 }
 
 .about-intro p {
-    color: var(--text-inverse-muted);       
+    color: var(--text-muted);       
     line-height: 1.5;
     max-width: 60ch;                      
     margin: 0;                                  
 }
 
 .about-intro strong {
-    color: var(--text-inverse-strong);
+    color: var(--text-secondary);
 }
 
 .about a { 
