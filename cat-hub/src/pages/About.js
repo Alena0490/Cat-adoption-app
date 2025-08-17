@@ -29,7 +29,7 @@ const About = () => {
             <section id="adoption-terms" className="conditions" aria-labelledby="conditions-title">
                 <h2 id="conditions-title">Adoption Conditions</h2>
 
-                <ul className="conditions-grid" role="list">
+                <ul className="conditions-grid">
                     {conditions.map(c => (
                     <li className="cond-card" key={c.title}>
                         <h3>{c.title}</h3>

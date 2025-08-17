@@ -87,7 +87,8 @@ small[role="alert"] {
     margin-top: .25rem; 
 }
 
-input[type="submit"].btn {
+.form input[type="submit"].btn,
+.form button[type="submit"].btn {
     width: 100%;
     background-color: var(--icon-secondary);
     color: var(--text-secondary);
@@ -100,9 +101,52 @@ input[type="submit"].btn {
     transition: all var(--transition-speed) var(--transition-timing);
 }
 
-input[type="submit"]:hover {
+.form input[type="submit"].btn:hover,
+.form button[type="submit"].btn:hover {
     background-color: var(--icon-primary);
     color: var(--text-primary);
     transform: scale(1.01);
 }
 
+/* submit focus ring */
+.form input[type="submit"].btn:focus-visible,
+.form button[type="submit"].btn:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/*visible focus*/
+.form input:focus-visible,
+.form textarea:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.form-status {
+    margin-top: .5rem;
+    border-radius: var(--radius-sm);
+    padding: .4rem .6rem;
+}
+
+/* success*/
+.form-status.success {
+    color: var(--color-success);
+    background: color-mix(in srgb, var(--color-success) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-success) 35%, transparent);    
+}
+
+/* error*/
+.form-status.error {
+    color: var(--color-error);
+    background: color-mix(in srgb, var(--color-error) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-error) 35%, transparent);
+}
+
+/* honeypot*/
+.hp {
+    position: absolute !important;
+    left: -10000px;
+    top: auto;
+    width: 1px; height: 1px;
+    overflow: hidden;
+}

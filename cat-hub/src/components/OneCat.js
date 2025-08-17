@@ -7,7 +7,7 @@ const OneCat = ({ cat }) => {
   const { id, image, name, description, sex, age, breed, castration, adopted } = cat;
 
     // status class (available/unavailable)
-  const statusClass = adopted ? 'status-unavailable' : 'status-available';
+  const statusClass = adopted ? 'unavailable' : 'available';
 
   return (
     <article className="one-cat" data-id={id}>
@@ -15,16 +15,17 @@ const OneCat = ({ cat }) => {
             src={image} 
             alt={name} 
             loading="lazy"
+            width={400}  
+            height={400}  
             sizes="(max-width: 600px) 100vw, 400px" 
         />
 
         <h2 className="cat-name">
-            {name}{' '}
-            {sex === 'Male' ? (
-                <FaMars className="icon-male sex-icon" aria-label="Male" />
-            ) : (
-                <FaVenus className="icon-female sex-icon" aria-label="Female" />
-            )}
+          {name}{' '}
+          <span className="sr-only">({sex})</span>
+          {sex === 'Male'
+            ? <FaMars className="icon-male sex-icon" aria-hidden="true" focusable="false" />
+            : <FaVenus className="icon-female sex-icon" aria-hidden="true" focusable="false" />}
         </h2>
         <p>{description}</p>
 
@@ -35,15 +36,18 @@ const OneCat = ({ cat }) => {
             <p><strong>Age:</strong> {age}</p>
             <p><strong>Breed:</strong> {breed}</p>
             <p><strong>Spayed/Neutered:</strong> {castration ? 'Yes' : 'No'}</p>
-            <p className={`status ${adopted ? 'unavailable' : 'available'}`} aria-live="polite">
-                <strong>Status:</strong> <span>{adopted ? 'Unavailable' : 'Available'}</span>
+            <p>
+              <strong>Status:</strong>
+              <span className={`status ${statusClass}`} role="status" aria-atomic="true">    {adopted ? 'Unavailable' : 'Available'}
+              </span>
             </p>
       </div>
 
       <div className="buttons">
         <button 
             className="donate-button btn" 
-            type="button" 
+            type="button"
+            aria-label={`Buy dinner for ${name} for €5`} 
             // onClick={()=>openDonate(cat.id)}
         >
             Buy dinner (€5)
@@ -53,6 +57,7 @@ const OneCat = ({ cat }) => {
           type="button"
           disabled={adopted}
           aria-disabled={adopted}
+          aria-label={adopted ? `${name} is unavailable for adoption` : `Adopt ${name}`}
         //   onClick={()=>navigate(`/contacts?cat=${encodeURIComponent(name)}`)}
         >
           {adopted ? 'Unavailable' : 'Adopt'}

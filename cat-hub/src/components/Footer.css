@@ -9,11 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: .75rem;
-
+    gap: .5rem;
     background-color: var(--bg-secondary);
     color: var(--text-primary);
-
     padding: 0 1rem 0 calc(5rem + 1rem);
     box-sizing: border-box;
     z-index: 1; 
@@ -22,6 +20,7 @@
 .footer .socials {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin: 0;
     padding: 0;
@@ -33,14 +32,19 @@
     justify-content: center;
     width: 1.75rem;
     height: 1.75rem;
-
     text-decoration: none;
     color: var(--icon-secondary);
     font-size: var(--fs-md);
-
     transition:
     transform var(--transition-speed) var(--transition-timing),
     color var(--transition-speed) var(--transition-timing);
+}
+
+/* keyboard / a11y */
+.footer .socials a:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
 }
 
 .footer .socials a svg {
@@ -65,16 +69,18 @@
         --footer-h: 4rem; 
     }
 
-        footer {
-            padding: 0 .75rem;
-            flex-wrap: nowrap;
+        .footer {
+            padding: 3rem .75rem 1rem;
+            /* flex-wrap: nowrap; */
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin-bottom: 5rem;
         }
 
         footer p {
             margin: 0%;
+            font-size: var(--fs-sm);
         }
         .socials {
             margin-left: 0;

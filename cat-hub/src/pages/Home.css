@@ -1,18 +1,15 @@
 
 section.hero {
     width: 100%;
-    height: 90vh;
+    height: 90svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: url("../images/heading-photo6.webp");
+    background: url("../images/heading-photo6.webp") left 60% center / cover no-repeat;
     position: relative;     
     z-index: 0;            
     overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: left 60% center;
     box-shadow: var(--shadow-md);
 }
 
@@ -27,25 +24,22 @@ section.hero {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        color-mix(in srgb, var(--bg-primary-light) 90%, black) 0%,  /* tmavší odstín bg-primary */
-        color-mix(in srgb, var(--bg-primary-light) 60%, black) 50%, /* jemnější tón */
-        rgba(0,0,0,0) 70%                                     /* průhledno vpravo */
-    );
-    pointer-events: none;
+    pointer-events:none;
+    z-index:1;
+    background: linear-gradient(90deg,
+        color-mix(in srgb, var(--bg-secondary) 70%, transparent) 0%,
+        color-mix(in srgb, var(--bg-secondary) 35%, transparent) 45%,
+        transparent 70%);
 }
 
 .light-theme .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        color-mix(in srgb, var(--bg-primary-light) 90%, rgb(44, 44, 44)) 0%,  /* tmavší odstín bg-primary */
-        color-mix(in srgb, var(--bg-primary-light) 60%, rgb(179, 179, 179)) 30%, /* jemnější tón */
-        rgba(255, 255, 255, 0) 50%                                     /* průhledno vpravo */
-    );
+    background: linear-gradient(90deg,
+        color-mix(in srgb, var(--bg-secondary) 55%, transparent) 0%,
+        color-mix(in srgb, var(--bg-secondary) 25%, transparent) 40%,
+        transparent 60%)
 }
 
 .hero h1 {
@@ -200,8 +194,7 @@ a.scroll-down:hover .scroll-icon {
 .mini-icons a:hover {
     background-color: color-mix(in srgb, var(--icon-primary) 8%, transparent);
     border-color: var(--icon-primary);
-    transform: translateY(-2px);
-    transform: scale(1.1) translateZ(0); 
+    transform: translateY(-2px) scale(1.1) translateZ(0); 
     filter: drop-shadow(0 0 4px rgba(214, 106, 200, 0.6));
 }
 
@@ -267,7 +260,7 @@ a.scroll-down:hover .scroll-icon {
 
     section.hero {
         background-position: left 60% center;
-        height: 95vh;
+        height: 95svh;
     }
 
     section.hero::after {
@@ -310,30 +303,21 @@ a.scroll-down:hover .scroll-icon {
     }
 
     section.hero::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            color-mix(in srgb, var(--bg-primary-light) 90%, black) 0%,
-            color-mix(in srgb, var(--bg-primary-light) 31%, black) 90%,
-            rgba(0, 0, 0, 0) 100%
-            );
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        h1 {
-            font-size: var(--fs-lg);        
-        }
-
-        p.introduction {
-            width: 90%;
-            font-size: var(--fs-sm);
-        }
+        background: linear-gradient(90deg,
+            color-mix(in srgb, var(--bg-secondary) 60%, transparent) 0%,
+            color-mix(in srgb, var(--bg-secondary) 30%, transparent) 90%,
+            transparent 100%);
+        opacity:.5;
     }
+
+    h1 {
+        font-size: var(--fs-lg);        
+    }
+
+    p.introduction {
+        width: 90%;
+        font-size: var(--fs-sm);
+    }
+}
 
 

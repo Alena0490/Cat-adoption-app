@@ -43,6 +43,7 @@
   --icon-secondary-light: #f178bd;
   --icon-secondary-dark: #b93084;
   --button-primary: #df49a6;
+  --button-secondary: #f178bd;
 
      /*Status colors*/
     --color-success: #4caf50;  
@@ -162,6 +163,8 @@
 
     --overlay-300: rgba(190, 190, 235, 0.3); /* jemný overlay */
     --overlay-600: rgba(184, 184, 233, 0.6); /* silnější overlay */
+
+    --focus-ring: #f05cd2;
 
 }
 

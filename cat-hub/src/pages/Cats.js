@@ -39,7 +39,7 @@ const Cats = () => {
     <div className="cats page">
         <h1>Cats for adoption</h1>
         <p className="section-lead">Meet our cats waiting for a forever home. Each one has a unique story and a heart full of love to share.</p>
-        <p className="result-count" aria-live="polite">
+        <p className="result-count" aria-live="polite" aria-atomic="true">
            {filteredCats.length} cats found
         </p>
         <fieldset className="filters" aria-label="Filters">

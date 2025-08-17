@@ -27,7 +27,7 @@ const { hash } = useLocation();
                 <p className="section-lead">Get in&nbsp;touch with&nbsp;us for any questions about adoption, volunteering, or&nbsp;donations. We’d love to&nbsp;hear from you.</p>
                 <article className="contact-wrapper">
                     <div className="contact-details card" role="list">
-                        <p role="listitem">
+                        <div role="listitem">
                             <strong>
                                 <span className="icon" aria-hidden="true"><FaPhoneAlt /></span>
                                 Phone: 
@@ -35,9 +35,9 @@ const { hash } = useLocation();
                             <a href="tel:+420123456789" aria-label="Call Cat Hub">
                                 +420 123 456 789 
                             </a>
-                        </p>
+                        </div>
 
-                        <p role="listitem">
+                        <div role="listitem">
                             <strong>
                                 <span className="icon" aria-hidden="true"><FaEnvelope /></span>
                                 Email: 
@@ -45,25 +45,27 @@ const { hash } = useLocation();
                             <a href="mailto:alenapumprova@seznam.cz" aria-label="Send email to Cat Hub">
                                 alenapumprova@seznam.cz 
                             </a>
-                        </p>
+                        </div>
 
-                        <p role="listitem">
+                        <div role="listitem">
                             <span className="icon"><FaMapMarkerAlt /></span>
                             <strong>Address:</strong>{' '}
                             <address>Cat Hub, 123 Cat Street, Cat City, CZ</address>
-                            </p>
+                            </div>
                     </div>
                     <div className="address-map card">                        
                         {/* <p>Find us on the map:</p> */}
-                        <iframe 
-                            title="Cat Hub Location"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.123456789!2d14.123456789!3d50.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b123456789abc%3A0x123456789abcdefg!2sCat%20Hub%20CZ!5e0!3m2!1sen!2scz!4v1612345678901"
-                            style={{ border: 0 }} 
-                            allowFullScreen="" 
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        >
-                        </iframe>  
+                        <div className="map-viewport">
+                            <iframe 
+                                title="Cat Hub Location"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.123456789!2d14.123456789!3d50.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b123456789abc%3A0x123456789abcdefg!2sCat%20Hub%20CZ!5e0!3m2!1sen!2scz!4v1612345678901"
+                                style={{ border: 0 }} 
+                                allowFullScreen="" 
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            >
+                            </iframe> 
+                        </div> 
                     </div>        
                 </article>
             </section>
