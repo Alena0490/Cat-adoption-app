@@ -63,8 +63,8 @@
 }
 
 .cond-card {
-    background: var(--bg-primary);
-    border: 1px solid var(--bg-primary-light);
+    background: var(--bg-primary-light);
+    border: 1px solid var(--bg-primary-lighter);
     border-radius: 10px;
     padding: 1rem;
     display: flex;

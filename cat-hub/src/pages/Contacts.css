@@ -102,6 +102,11 @@
 }
 
 .contact-details p > a,
+.contact-details address { 
+    margin-inline-start: .4rem; 
+}
+
+.contact-details p > a,
 .contact-details p > address {
     min-width: 0;                       
     overflow-wrap: anywhere;

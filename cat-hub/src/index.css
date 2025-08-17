@@ -39,7 +39,7 @@
   --icon-primary-light: #ffa3f3;
   --icon-primary-dark: #e352c7;
 
-  --icon-secondary: #df49a6;
+  --icon-secondary: #ee4cb0;
   --icon-secondary-light: #f178bd;
   --icon-secondary-dark: #b93084;
   --button-primary: #df49a6;
@@ -160,6 +160,9 @@
     -shadow-md: 0 0.5rem 1.125rem rgba(100, 100, 100, 0.3);
     --shadow-strong: 0 6px 14px rgba(100, 100, 100, 0.55);
 
+    --overlay-300: rgba(190, 190, 235, 0.3); /* jemný overlay */
+    --overlay-600: rgba(184, 184, 233, 0.6); /* silnější overlay */
+
 }
 
 html, body {
@@ -253,7 +256,7 @@ strong {
     border-radius: var(--radius-sm);
     border: 1px solid var(--bg-primary-light);
     background: var(--bg-primary); 
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-weight: 600; 
     text-decoration: none; 
     cursor: pointer;

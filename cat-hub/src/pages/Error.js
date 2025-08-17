@@ -7,6 +7,12 @@ const { pathname, search } = useLocation();
 const navigate = useNavigate();
 const h1Ref = useRef(null);
 
+// Go  to the previous page
+const goBack = () => {
+    if (window.history.length > 1) navigate(-1);
+    else navigate('/');
+};
+
 // a11y: po načtení zaostři na nadpis
 useEffect(() => {
     h1Ref.current?.focus();
@@ -24,7 +30,7 @@ const tried = `${pathname}${search || ""}`;
                 Sorry, the&nbsp;page <code className="err-path">{tried}</code> doesn’t exist or&nbsp;was moved.
             </p>
             <div className="error-actions">
-                <button type="button" className="btn" onClick={() => navigate(-1)}>
+                <button type="button" className="btn" onClick={goBack}>
                     Go back
                 </button>
                 <Link to="/" className="btn btn-primary">

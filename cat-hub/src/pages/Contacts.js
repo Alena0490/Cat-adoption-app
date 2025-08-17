@@ -30,26 +30,26 @@ const { hash } = useLocation();
                         <p role="listitem">
                             <strong>
                                 <span className="icon" aria-hidden="true"><FaPhoneAlt /></span>
-                                Phone:
-                            </strong>
+                                Phone: 
+                            </strong>{' '}
                             <a href="tel:+420123456789" aria-label="Call Cat Hub">
-                                +420 123 456 789
+                                +420 123 456 789 
                             </a>
                         </p>
 
                         <p role="listitem">
                             <strong>
                                 <span className="icon" aria-hidden="true"><FaEnvelope /></span>
-                                Email:
-                            </strong>
+                                Email: 
+                            </strong>{' '}
                             <a href="mailto:alenapumprova@seznam.cz" aria-label="Send email to Cat Hub">
-                                alenapumprova@seznam.cz
+                                alenapumprova@seznam.cz 
                             </a>
                         </p>
 
                         <p role="listitem">
                             <span className="icon"><FaMapMarkerAlt /></span>
-                            <strong>Address:</strong>
+                            <strong>Address:</strong>{' '}
                             <address>Cat Hub, 123 Cat Street, Cat City, CZ</address>
                             </p>
                     </div>

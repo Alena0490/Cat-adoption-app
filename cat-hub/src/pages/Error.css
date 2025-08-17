@@ -2,14 +2,13 @@
 .error {
     --footer-h: 64px; 
     position: relative;
-    min-height: 90vh;
+    min-height: 90svh;
     display: flex;
     flex-direction: column;
     justify-content: center;     
     align-items: flex-start;    
     gap: 1rem;
     padding: clamp(32px, 6vw, 64px);
-    position: relative;
     color: var(--text-primary);
     background: url("../images/heading-photo2.webp") center/cover no-repeat;
     background-size: cover;
@@ -154,19 +153,36 @@
     outline-offset: 2px; 
 }
 
+.err-text { 
+    word-break: break-word; 
+    overflow-wrap: anywhere; 
+}
+
+.err-path { 
+    padding: .1em .35em;
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, currentColor 14%, transparent);
+    box-decoration-break: clone; 
+}
+
+@supports not (color: color-mix(in srgb, black 50%, white)) {
+    .err-path { 
+        background: var(--overlay-300); 
+    }
+}
+
+
 @media screen and (max-width: 900px) {
     .error {
-        min-height: 95vh;
+        min-height: 95svh;
     }
 }
 
 @media  screen and (max-width: 600px) {
-    .error {
+    .error { 
         padding: clamp(16px, 3vw, 32px);
-        background: url("../images/heading-photo2.webp") center/cover no-repeat;
-        background-size: cover;
-        background-position: 60% center;
-    }
+        background-position: 60% center; 
+    } 
 
     .error::after {
         background: linear-gradient(
@@ -185,11 +201,16 @@
         rgba(182,182,182,0) 100%
         );    
     }
+
+    .error-actions {
+        position: static;
+        margin-block-start: 1rem;
+        justify-content: center;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .error-actions .btn,
-  .buttons button {
+  .error-actions .btn {
     transition: none;
   }
 }
