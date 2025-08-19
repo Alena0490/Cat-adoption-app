@@ -4,18 +4,20 @@ import faqData from '../faqData';
 
 const FAQ = () => {
     return (
-        <div className="faq">
-            <h2>Frequently Asked Questions</h2>
+    <section className="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Frequently Asked Questions</h2>
+        <div className="faq-list">
         {faqData.map((item) => (
-        <Question
-            className ="faq-question"
-            key={item.id}
-            id={item.id} // ← přidat
-            question={item.question}
-            answer={item.answer}
-        />
+            <Question
+                className="faq-question"
+                key={item.id}
+                id={item.id}
+                question={item.question}
+                answer={item.answer}
+             />
         ))}
         </div>
+    </section>
     )
 }
 

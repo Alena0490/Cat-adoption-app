@@ -70,6 +70,7 @@ p.introduction {
     min-width: 150px;
     text-align: center;
     z-index: 2;
+    padding: 0.75rem 1rem;
 }
 
 a.scroll-down {
@@ -145,7 +146,7 @@ a.scroll-down:hover .scroll-icon {
 #adoption {
     background: 
     linear-gradient(to right, transparent 0%, var(--bg-primary-light) 55%), 
-    url('../images/adoption.webp') -4rem center / contain no-repeat;
+    url('../images/adoption.webp') -8rem center / cover no-repeat;
 }
 
 #adoption h2 {
@@ -216,7 +217,7 @@ a.scroll-down:hover .scroll-icon {
     font-size: var(--fs-base);
 }
 
- @media (max-width: 1400px) {
+ @media (max-width: 1200px) {
     #mission {
         background: 
         linear-gradient(to left, transparent 0%, var(--bg-secondary-transparent) 5%), 
@@ -226,7 +227,7 @@ a.scroll-down:hover .scroll-icon {
     #adoption {
         background: 
         linear-gradient(to right, transparent 0%, var(--bg-primary-light-transparent) 5%), 
-        url('../images/adoption.webp') -4rem center / cover no-repeat;
+        url('../images/adoption.webp') -9rem center / cover no-repeat;
     }
 } 
 
@@ -295,6 +296,18 @@ a.scroll-down:hover .scroll-icon {
         padding: .2rem .4rem;
         min-height: 2rem;
     }
+
+     #mission {
+        background: 
+        linear-gradient(to left, transparent 0%, var(--bg-secondary-transparent2) 0%), 
+        url('../images/mission.webp') -25rem center / cover no-repeat;
+    }
+
+     #adoption {
+        background: 
+        linear-gradient(to right, transparent 0%, var(--bg-primary-light-transparent2) 0%), 
+        url('../images/adoption.webp') -19rem center / cover no-repeat;
+    }
 }
 
 @media (max-width: 480px) {
@@ -317,6 +330,17 @@ a.scroll-down:hover .scroll-icon {
     p.introduction {
         width: 90%;
         font-size: var(--fs-sm);
+    }
+
+    #mission {
+        background: 
+        linear-gradient(to left, transparent 0%, var(--bg-secondary-transparent2) 0%), 
+        url('../images/mission.webp') -52rem center / cover no-repeat;
+    }
+
+    #adoption {
+        background: linear-gradient(to right, transparent 0%, 
+        var(--bg-primary-light-transparent2) 0%), url('../images/adoption.webp') -27rem center / cover no-repeat;
     }
 }
 

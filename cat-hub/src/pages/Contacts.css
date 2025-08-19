@@ -314,7 +314,7 @@ transition: all var(--transition-speed) var(--transition-timing);
 #volunteer {
     background:
         linear-gradient(to left, transparent 0%, var(--bg-primary-light) 47%),
-        url('../images/volunteer2.webp') right center / contain no-repeat;
+        url('../images/volunteer2.webp') right center / cover no-repeat;
 }
 
 #volunteer h3 { font-size: var(--fs-md); margin: 2rem 0 .5rem; }

@@ -50,11 +50,11 @@
   transition: transform 0.25s;
 }
 
-input:checked + .slider {
+#theme-toggle:checked + .slider  {
   background-color: var(--icon-primary-dark);
 }
 
-input:checked + .slider::before {
+#theme-toggle:checked + .slider::before {
   transform: translateX(26px);
   background-color: var( --bg-secondary);
 }

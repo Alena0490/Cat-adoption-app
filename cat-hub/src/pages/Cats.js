@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { IoClose } from "react-icons/io5";
 import OneCat from "../components/OneCat";
 import cats from "../data"; 
 import './Cats.css';
+import AdoptionForm from "../components/AdoptionForm";
 
 const Cats = () => {
 
@@ -34,6 +36,68 @@ const Cats = () => {
 
     return okSex && okAvailability && okCastration && okKitten;
     });
+
+  // === form show/close ===
+  const [showForm, setShowForm] = useState(false);
+  const [selectedCat, setSelectedCat] = useState(null);
+  const [closing, setClosing] = useState(false);
+  const panelRef = useRef(null);
+  const closeTimer = useRef(null);
+
+  const openForm = (cat) => {
+    setSelectedCat(cat);
+    setShowForm(true);
+    setClosing(false);
+  };
+  const closeForm = () => {
+    setShowForm(false);
+    setSelectedCat(null);
+    setClosing(false)
+  };
+
+  const requestClose = () => {
+    if (closing) return;
+  setClosing(true);
+  // fallback for animation
+    closeTimer.current = window.setTimeout(() => {
+      closeForm();
+    }, 350);
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) requestClose();
+  };
+
+    const handleAnimEnd = (e) => {
+      if (closing && e.target === panelRef.current) {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeForm();
+    }
+  };
+
+  // zavření na Escape
+  useEffect(() => {
+  const onKey = (e) => e.key === "Escape" && requestClose();
+    if (showForm) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [showForm]);
+
+  // zamknutí scrollu pozadí při otevřeném panelu
+  useEffect(() => {
+    if (!showForm) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, [showForm]);
+
+   // fokus on panel after opening
+  useEffect(() => {
+    if (showForm) panelRef.current?.focus();
+  }, [showForm]);
+  // timeout cleaning
+  useEffect(() => {
+    return () => { if (closeTimer.current) clearTimeout(closeTimer.current); };
+  }, []);
 
   return (
     <div className="cats page">
@@ -99,11 +163,35 @@ const Cats = () => {
         {filteredCats.length === 0 ? (
       <p className="empty">No cats match your filters. Try changing criteria.</p>
         ) : (
-        filteredCats.map(cat => <OneCat key={cat.id} cat={cat} />)
-        )}
-      </div>
-    </div>
-  );
-};
+        filteredCats.map(cat => <OneCat key={cat.id} cat={cat} onAdopt={openForm} />)
+           )}
+  </div>
+  {/* Panel s formulářem */}
+  {showForm && (
+  <div
+    className={`adopt-backdrop${closing ? " is-closing" : ""}`}
+    nClick={handleBackdropClick}
+  >
+    <section
+    className={`adopt-sheet${closing ? " is-closing" : ""}`}
+    role="dialog"
+    aria-modal="true"
+    aria-label="Adoption form"
+    ref={panelRef}
+    tabIndex={-1}
+    onAnimationEnd={handleAnimEnd}
+    >
+
+    <button className="adopt-close" type="button" onClick={requestClose} aria-label="Close form">
+      <IoClose />
+  </button>
+  <AdoptionForm
+    initialPreferredCat={selectedCat?.name ?? ""}
+    onSubmitted={requestClose}
+  />
+  </section>
+</div>
+  )}
+</div>)}
 
 export default Cats;

@@ -50,6 +50,24 @@
     outline-offset: 2px;
     }
 
+.filters select,
+.filters select option {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.filters select option:hover,
+.filters select option:focus {
+    background: var(--bg-primary-lighter);
+}
+
+/* Firefox */
+.filters select option:checked,
+.filters select option:hover {
+  background: color-mix(in oklab, var(--icon-secondary) 58%, transparent);
+  color: var(--text-primary);
+}
+
 .sr-only{
     position: absolute !important;
     width: 1px; height: 1px;
@@ -82,5 +100,164 @@ p.result-count {
     align-items: flex-start;
     justify-content: center;
     gap: 0.9375rem;
+}
+
+/**** ADOPTION FORM ****/
+
+.adopt-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: grid;
+    /* ukotví panel ke spodnímu okraji, horizontálně na střed */
+    place-items: end center;
+    overflow: hidden;                 /* zamezí scrollu pozadí */
+    touch-action: none;  
+}
+
+.adopt-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-600, rgba(20, 20, 24, .60));
+    opacity: 0;
+    animation: fade-in 
+        var(--transition-speed, .3s) 
+        ease-out 
+        forwards;
+}
+
+.adopt-backdrop.is-closing::before {
+    pointer-events: none;
+    animation: 
+    fade-out 
+        var(--transition-speed, .25s) 
+        ease-in
+        forwards;
+}
+
+/* Bottom sheet panel */
+.adopt-sheet {
+    position: relative;
+    width: min(720px, 100vw);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    min-height: 0; 
+    max-height: 90svh;
+    background: var(--bg-primary, #23232e);
+    color: var(--text-primary, #f5f5f5);
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+    box-shadow: var(--shadow-strong, 0 6px 14px rgba(0,0,0,.55));
+    padding: 1.25rem;
+    transform: translateY(100%);
+    animation: slide-up var(--transition-speed, .35s) var(--transition-timing, ease-out) forwards;
+}
+
+/* fallback for other browsers */
+@supports not (max-height: 90svh) {
+    .adopt-sheet { 
+        max-height: 90vh; 
+    }
+}
+
+.adopt-sheet.is-closing {
+    pointer-events: none;
+    animation: slide-down var(--transition-speed, .3s) 
+    var(--transition-timing, ease-in) forwards;
+}
+
+.adopt-sheet::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+.adopt-sheet::-webkit-scrollbar-track {
+    background-color: #1e1e24;
+}
+
+.adopt-sheet::-webkit-scrollbar-thumb {
+    background-color: #6649b8;
+}
+
+/* Closing button*/
+.adopt-close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    border: 0;
+    background: transparent;
+    color: var(--text-secondary, #cfcfd3);
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.adopt-close:focus-visible {
+    outline: 2px solid var(--focus-ring, #df49a6);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Keyframes */
+@keyframes slide-up { 
+    to { 
+        transform: translateY(0); 
+    } 
+}
+
+@keyframes slide-down { 
+    from { 
+        transform: translateY(0); 
+    } 
+    to { 
+        transform: translateY(100%); 
+    } 
+}
+
+@keyframes fade-in { 
+    from { 
+        opacity: 0; 
+    } 
+    to { 
+        opacity: 1; 
+    } 
+}
+
+@keyframes fade-out { 
+    from { 
+        opacity: 1; 
+    } 
+    to { 
+        opacity: 0; 
+    } 
+}
+
+/*Mobile*/
+@media (max-width: 600px) {
+    .adopt-sheet { 
+        width: 100vw; 
+        border-radius: 16px 16px 0 0;
+    }
+}
+
+.adopt-sheet { 
+    max-height: calc(100dvh - 10px); 
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .adopt-backdrop::before,
+    .adopt-backdrop.is-closing::before,
+    .adopt-sheet,
+    .adopt-sheet.is-closing {
+        animation: none;
+    }
+
+    .adopt-sheet { 
+        transform: none; 
+    }
 }
 

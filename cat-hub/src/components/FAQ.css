@@ -2,7 +2,9 @@
     background-color: var(--bg-secondary);
     padding: 1.25rem;
     border-radius: var(--radius-sm);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
+    max-width: 1100px;
+    margin-inline: auto;
 }
 
 .faq h2 {

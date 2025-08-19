@@ -1,0 +1,126 @@
+
+p.microcopy {
+    font-size: var(--fs-sm);
+    margin-top: 2rem;
+}
+
+button.adopt-close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    border: 0;
+    background: transparent;
+    color: var(--text-secondary, #cfcfd3);
+    font-size: var(--fs-lg);
+    line-height: 1;
+    cursor: pointer;
+    /* margin: 0.5rem; */
+}
+
+.form {
+    backdrop-filter: blur(5px);
+}
+
+.form label {
+    line-height: 1.4;
+}
+
+fieldset.select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-inline-size: min-content;
+    margin-inline: 0;
+    border: none;
+    border-image: initial;
+    gap: 0.5rem;
+    padding-block: 0.25em 0.75em;
+    padding-inline: 0;
+}
+
+fieldset.select legend {
+    display: block;
+    width: 100%;
+    padding-inline: 0;
+    padding-bottom: 0.2rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-size: var(--fs-base);    
+}
+
+fieldset.select label {
+    color: var(--text-secondary);
+    width: 100%;
+    font-size: var(--fs-base);
+    /* line-height: 1rem; */
+    vertical-align: middle;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0rem;
+}
+
+.form fieldset.select > label:focus-within {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+fieldset.select label:first-of-type {
+    border-top: 1px solid var( --icon-secondary);
+    padding-top: 0.2rem;
+}
+
+fieldset.select label:last-of-type {
+    /* border-bottom: 1px solid var( --icon-secondary); */
+    padding-bottom: 0.2rem;
+}
+.adopt-sheet label:has(> input[type="radio"]:checked) {
+  color: var(--icon-secondary);
+}
+
+input[type="radio" i] {
+    background-color: var(--text-soft);
+    accent-color: var(--icon-secondary);
+    cursor: pointer;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 0.5rem 0.5rem 0 1rem;
+    padding: initial;
+    border: 1px solid var(--text-secondary);
+}
+
+input[type="radio"]:focus-visible {
+    outline: 2px solid var(--outline);
+    outline-offset: 2px;
+}
+
+.form-banner {
+    margin-top: .5rem;
+    border-radius: var(--radius-sm);
+    padding: .4rem .6rem;
+    font-size: var(--fs-sm);
+}
+
+/* success*/
+.form-banner.success {
+    color: var(--color-success);
+    background: color-mix(in srgb, var(--color-success) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-success) 35%, transparent);    
+}
+
+/* error*/
+.form-banner.error {
+    color: var(--color-error);
+    background: color-mix(in srgb, var(--color-error) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-error) 35%, transparent);
+}
+
+.form.show-errors :is(input, select, textarea):is(:invalid, :user-invalid) {
+    border: 1px solid var(--color-error) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 20%, transparent);
+}
+
+.form.show-errors fieldset.select:has(input[type="radio"]:invalid) > legend,
+.form.show-errors fieldset.select:has(input[type="radio"]:user-invalid) > legend {
+    color: var(--color-error);
+}

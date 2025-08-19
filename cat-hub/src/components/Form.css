@@ -38,6 +38,8 @@ form.form {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
+input[type="number"],
 textarea {
     width: 100%;
     padding: 0.5rem;
@@ -94,6 +96,7 @@ small[role="alert"] {
     color: var(--text-secondary);
     border: none;
     margin: 0.5rem;
+    padding: 0.75rem 1rem;
     border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: var(--fs-base);

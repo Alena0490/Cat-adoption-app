@@ -60,7 +60,7 @@ const SettingsContent = () => {
             role="switch"
             aria-checked={isLight}
           />
-          <span className="slider" />
+          <span className="slider" aria-hidden="true" />
         </label>
       </div>
 

@@ -1,7 +1,7 @@
 import './OneCat.css';
 import { FaMars, FaVenus } from 'react-icons/fa';
 
-const OneCat = ({ cat }) => {
+const OneCat = ({ cat, onAdopt }) => {
   if (!cat) return null;
 
   const { id, image, name, description, sex, age, breed, castration, adopted } = cat;
@@ -58,7 +58,7 @@ const OneCat = ({ cat }) => {
           disabled={adopted}
           aria-disabled={adopted}
           aria-label={adopted ? `${name} is unavailable for adoption` : `Adopt ${name}`}
-        //   onClick={()=>navigate(`/contacts?cat=${encodeURIComponent(name)}`)}
+          onClick={() => !adopted && onAdopt?.(cat)}
         >
           {adopted ? 'Unavailable' : 'Adopt'}
         </button>
