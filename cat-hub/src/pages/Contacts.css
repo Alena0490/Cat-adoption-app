@@ -372,4 +372,28 @@ transition: all var(--transition-speed) var(--transition-timing);
         align-items: stretch; 
     }
 }
+@media (max-width: 420px) {
+
+    #donate, #volunteer, #contact-form, #contact-info {
+        padding: 2rem 2rem 4rem;
+    }
+
+    .payment-info {
+        padding: 1rem 1rem;
+    }
+
+    .qr-code {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+}
+
+    .qr-caption {
+        margin-block: .2rem;
+    }
+}
+
 
