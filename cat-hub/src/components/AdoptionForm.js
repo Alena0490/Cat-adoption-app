@@ -121,7 +121,8 @@ const handleInvalid = () => {
 };
 
   return (
-    <article>
+    <article className="adoption">
+    <h3>Adoption Form</h3>
       <p className="microcopy">
         No answer is right or wrong. We use the information only to match you with the right cat.
       </p>
