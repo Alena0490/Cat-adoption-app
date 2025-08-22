@@ -4,10 +4,13 @@ import Form from "../components/Form";
 import './Contacts.css';
 import qrCode from "../images/QR-code2.webp";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt,  FaPaw } from "react-icons/fa";
+import {APIProvider, Map, Marker, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
+import { ReactComponent as PawIcon } from '../images/pet-14-svgrepo-com.svg';
 
 const Contacts = () => {
     
 const { hash } = useLocation();
+const center = { lat: 50.42318038260375, lng: 15.587433376821572 }; 
 
   useEffect(() => {
     // Po načtení či změně hashe sroluj na odpovídající <section id="...">
@@ -56,15 +59,36 @@ const { hash } = useLocation();
                     <div className="address-map card">                        
                         {/* <p>Find us on the map:</p> */}
                         <div className="map-viewport">
-                            <iframe 
-                                title="Cat Hub Location"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.123456789!2d14.123456789!3d50.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b123456789abc%3A0x123456789abcdefg!2sCat%20Hub%20CZ!5e0!3m2!1sen!2scz!4v1612345678901"
-                                style={{ border: 0 }} 
-                                allowFullScreen="" 
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
+                            <APIProvider 
+                            apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+                            libraries={['places','routes', 'marker']}
                             >
-                            </iframe> 
+                                <Map
+                                    mapId={process.env.REACT_APP_GOOGLE_MAP_ID}
+                                    defaultCenter={center} 
+                                    defaultZoom={12} 
+                                    gestureHandling="greedy" 
+                                    className="map-box">
+                                    <AdvancedMarker 
+                                        position={center} 
+                                        className="marker"
+                                        anchor={{ x: 0.5, y: 1 }} >
+                                            <Pin 
+                                        className="pin"
+                                        background="var(--icon-secondary)" 
+                                        borderColor="var(--icon-secondary-dark)"
+                                        glyphColor="#fff"
+                                        scale={1.5}
+                                        >
+                                            <PawIcon 
+                                                className="pin-glyph" 
+                                                aria-hidden="true" 
+                                                focusable="false" 
+                                                style={{ width: "1.5rem", height: "1.5rem" }}/>
+                                        </Pin>
+                                    </AdvancedMarker>
+                                </Map>
+                            </APIProvider> 
                         </div> 
                     </div>        
                 </article>
