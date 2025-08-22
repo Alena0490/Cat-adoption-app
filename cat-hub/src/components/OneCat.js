@@ -1,4 +1,5 @@
 import './OneCat.css';
+import { useEffect } from 'react';
 import { FaMars, FaVenus } from 'react-icons/fa';
 
 const OneCat = ({ cat, onAdopt }) => {
@@ -6,8 +7,58 @@ const OneCat = ({ cat, onAdopt }) => {
 
   const { id, image, name, description, sex, age, breed, castration, adopted } = cat;
 
-    // status class (available/unavailable)
   const statusClass = adopted ? 'unavailable' : 'available';
+
+  // klient is created only once
+  let paymentsClient = null;
+
+
+
+  // 🟢 own async funkcion
+  const openDonate = async () => {
+    if (!paymentsClient) {
+      paymentsClient = new window.google.payments.api.PaymentsClient({ environment: 'TEST' });
+    }
+
+    const request = {
+      apiVersion: 2,
+      apiVersionMinor: 0,
+      allowedPaymentMethods: [
+        {
+          type: "CARD",
+          parameters: {
+            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+            allowedCardNetworks: ["VISA", "MASTERCARD"],
+          },
+          tokenizationSpecification: {
+            type: "PAYMENT_GATEWAY",
+            parameters: {
+              gateway: "example", // on production use a real payment
+              gatewayMerchantId: "exampleMerchantId",
+            },
+          },
+        },
+      ],
+      merchantInfo: {
+        merchantId: "12345678901234567890", // test ID
+        merchantName: "Cat Hub Donations",
+      },
+      transactionInfo: {
+        totalPriceStatus: "FINAL",
+        totalPrice: "5.00",
+        currencyCode: "EUR",
+        countryCode: "CZ",
+      },
+    };
+
+    try {
+      const result = await paymentsClient.loadPaymentData(request);
+      console.log("Payment succesfull:", result);
+      alert(`You just made ${name} purr with happiness! 🐾 Thank you for the donation.`);
+    } catch (err) {
+      console.error("Your payment was cancelled or could not be processed. Please try again.", err);
+    }
+  };
 
   return (
     <article className="one-cat" data-id={id}>
@@ -48,7 +99,7 @@ const OneCat = ({ cat, onAdopt }) => {
             className="donate-button btn" 
             type="button"
             aria-label={`Buy dinner for ${name} for €5`} 
-            // onClick={()=>openDonate(cat.id)}
+            onClick={() => openDonate(id, name)}
         >
             Buy dinner (€5)
         </button>

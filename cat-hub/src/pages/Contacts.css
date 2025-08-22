@@ -186,6 +186,25 @@ transition: all var(--transition-speed) var(--transition-timing);
         backdrop-filter: brightness(1);
 }
 
+.map-box button {
+    background-color: var(--icon-secondary) !important;
+    color: #f5f5f5 !important;
+    border-radius: var(--radius-lg) !important;
+    margin: 0 0.25rem !important;
+    padding: 0.25rem 0.5rem !important;
+}
+
+.map-box button:hover,
+.map-box button:active {
+    background-color: var(--icon-secondary-light) !important;
+}
+
+.map-box button img,
+.map-box button img:hover,
+.map-box button img:active {
+    filter: brightness(3);
+}
+
 .light-theme .address-map .map-box {
     filter: none;
 }

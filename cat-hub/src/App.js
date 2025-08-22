@@ -8,7 +8,6 @@ import Error from './pages/Error';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 import SettingsSidebar from "./components/SettingsSidebar";
-import { APIProvider } from '@vis.gl/react-google-maps';
 
 const App = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
