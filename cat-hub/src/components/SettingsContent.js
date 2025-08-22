@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 function ResetSettings({ onReset }) {
   
   return (
-    <button type="button" className="btn btn-secondary" onClick={onReset}>
+    <button type="button" className="btn btn-secondary reset-button" onClick={onReset}>
       Reset to defaults
     </button>
   );

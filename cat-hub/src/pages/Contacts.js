@@ -91,7 +91,54 @@ const Contacts = () => {
         </article>
       </section>
 
-      {/* zbytek kódu (donate, volunteer, form) nechávám beze změny */}
+      <section id="donate">
+                <h2>Donate</h2>
+                <p className="section-lead">
+                    Your donations help&nbsp;us provide food, medical care, and&nbsp;shelter for cats in&nbsp;need. Because every cat deserves a&nbsp;safe and&nbsp;loving home
+                </p>
+                
+                <div className="donate-options">
+                    <div className="payment-info">
+                        <h3>Bank Transfer</h3>
+                        <dl className="payment-list">
+                            <div><dt>Account number:</dt><dd className="value">123456789/0100</dd></div>
+                            <div><dt>Variable symbol:</dt><dd className="value">2025</dd></div>
+                            <div><dt>Message:</dt><dd>Cat Hub</dd></div>
+                        </dl>
+                        <p className="info">or you can just scan the QR code with your phone</p>
+                    </div>
+
+                    <div className="qr-code">
+                        <img src={qrCode} alt="QR code for donation" loading="lazy" decoding="async" />
+                        <p className="qr-caption">Scan with your banking app</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="volunteer">
+                <h2>Volunteer</h2>
+                <p className="section-lead">
+                    Join our team and help with cat care, events, or adoption days.                
+                </p>
+                <p>
+                    Volunteering with Cat Hub is a hands-on way to make a direct impact. Whether you can spare a few hours a week or just help during events, your time matters and saves lives. We’ll provide guidance, basic training, and all the support you need — no prior experience required, only kindness and reliability.
+                </p>
+                <h3>What you can do:</h3>
+                <ul className="volunteer-list">
+                    <li><FaPaw className="icon" />Help with daily cat care (feeding, cleaning, socializing)</li>
+                    <li><FaPaw className="icon" />Assist at adoption events and open days</li>
+                    <li><FaPaw className="icon" />Foster cats in need of temporary homes</li>
+                    <li><FaPaw className="icon" />Promote our mission on social media</li>
+                    <li><FaPaw className="icon" />Organize or help with fundraising events</li>
+                </ul>
+                <p>
+                    If you’re interested, please fill out the <a href="#contact-form" aria-label="scroll to contact form">form</a> below and we’ll get back to you with more details.
+                </p>
+            </section>
+
+            <section id="contact-form">
+                <Form />
+            </section>
     </div>
   );
 };

@@ -1,4 +1,9 @@
 /* BACKDROP */
+.settings-sidebar {
+  backdrop-filter: blur(6px);
+  background: color-mix(in srgb, var(--bg-primary) 85%, transparent);
+}
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
