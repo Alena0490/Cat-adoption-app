@@ -136,6 +136,7 @@
     position: relative;
     border-radius: var(--radius-lg); 
     overflow: hidden; 
+    padding: 0.25rem;
 }
 
 .map-viewport {
@@ -158,11 +159,11 @@ content: "";
 position: absolute;
 inset: 0;
 pointer-events: none;
-background:
+/* background:
     linear-gradient(90deg,
     color-mix(in srgb, var(--bg-secondary) 20%, transparent) 0%,
     transparent 55%),
-    color-mix(in srgb, var(--icon-secondary) 15%, transparent); 
+    color-mix(in srgb, var(--icon-secondary) 15%, transparent);  */
 backdrop-filter: 
     brightness(.96) 
     contrast(1.1) 
@@ -171,15 +172,18 @@ backdrop-filter:
     brightness(.96) 
     contrast(1.1) 
     saturate(1.05);
+filter: brightness(0.96);
 transition: all var(--transition-speed) var(--transition-timing);
 }
 
 .map-viewport:hover:after {
-    background:
+    /* background:
         linear-gradient(90deg,
         color-mix(in srgb, var(--bg-secondary) 10%, transparent) 0%,
         transparent 55%),
-        color-mix(in srgb, var(--icon-secondary) 10%, transparent); 
+        color-mix(in srgb, var(--icon-secondary) 10%, transparent);  */
+        filter: brightness(1);
+        backdrop-filter: brightness(1);
 }
 
 .light-theme .address-map .map-box {
