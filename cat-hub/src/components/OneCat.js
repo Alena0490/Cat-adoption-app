@@ -1,5 +1,4 @@
 import './OneCat.css';
-import { useEffect } from 'react';
 import { FaMars, FaVenus } from 'react-icons/fa';
 
 const OneCat = ({ cat, onAdopt }) => {

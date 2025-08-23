@@ -354,7 +354,9 @@ section.kitty {
         }
 
         .cat {
-            margin-top: 4rem;
+            margin-top: 1rem;
+            margin-bottom: 2rrem;
+
         }
 }
 

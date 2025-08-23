@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import FAQ from "../components/FAQ";
 import './About.css';
 

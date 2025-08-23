@@ -80,7 +80,7 @@ const Cats = () => {
   const onKey = (e) => e.key === "Escape" && requestClose();
     if (showForm) document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [showForm]);
+  }, [showForm, requestClose]);
 
   // zamknutí scrollu pozadí při otevřeném panelu
   useEffect(() => {

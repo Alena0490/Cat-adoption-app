@@ -22,7 +22,7 @@ const SettingsSidebar = ({ onClose }) => {
     const onKey = (e) => { if (e.key === "Escape") requestClose(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [requestClose]);
 
   // po mountu zaostři panel + úklid timeoutu
   useEffect(() => {
