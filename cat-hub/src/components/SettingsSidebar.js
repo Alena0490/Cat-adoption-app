@@ -1,6 +1,6 @@
 import './SettingsSidebar.css';
 import { IoClose } from "react-icons/io5";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import SettingsContent from "./SettingsContent";
 
 const SettingsSidebar = ({ onClose }) => {
@@ -8,14 +8,15 @@ const SettingsSidebar = ({ onClose }) => {
   const [closing, setClosing] = useState(false);
   const closeTimer = useRef(null);
 
-  const requestClose = () => {
+  // stabilní funkce – už nebude spouštět warning
+  const requestClose = useCallback(() => {
     if (closing) return;
     setClosing(true);
     // fallback kdyby se nespustil animationend
     closeTimer.current = window.setTimeout(() => {
       onClose?.();
     }, 350); // drž to v sync s CSS délkou animace
-  };
+  }, [closing, onClose]);
 
   // ESC => zavřít
   useEffect(() => {
