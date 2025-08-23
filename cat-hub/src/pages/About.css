@@ -143,6 +143,17 @@
     }
 }
 
+@media (max-width: 600px) {
+    .about-intro {
+        border: none;
+        padding-inline: 0.5rem;
+    }
+
+    .conditions-grid {
+        gap: 1rem
+    }
+}
+
 /*** CAT ***/
 section.kitty {
     margin-top: 6rem;
@@ -245,7 +256,7 @@ section.kitty {
     height: 0;
     width: 100%;
     border-radius: 0 0 50% 50% / 0 0 40% 40%;
-    background: var(--bg-primary-lighter);
+    background: var(--bg-secondary);
     animation: blink 4s infinite ease-in;
 }
 	

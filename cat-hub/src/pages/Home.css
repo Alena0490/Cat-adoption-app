@@ -1,7 +1,7 @@
 
 section.hero {
     width: 100%;
-    height: 90svh;
+    height: 91svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,6 +255,10 @@ a.scroll-down:hover .scroll-icon {
         display: none;
     }
 
+    .adotion p {
+        margin-left:  0;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -321,6 +325,10 @@ a.scroll-down:hover .scroll-icon {
             color-mix(in srgb, var(--bg-secondary) 30%, transparent) 90%,
             transparent 100%);
         opacity:.5;
+    }
+
+    .mission {
+        padding-left: 2rem;
     }
 
     h1 {
