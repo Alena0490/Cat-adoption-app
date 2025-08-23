@@ -150,6 +150,12 @@ h2 .sex-icon {
     background-color: var(--button-secondary);
 }
 
+@media (max-width: 868px) {
+    .one-cat {
+        max-width: 31rem;
+    }
+}
+
 @media (max-width: 668px) {
     .one-cat {
         max-width: 100%;
