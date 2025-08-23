@@ -1,26 +1,52 @@
-name: Pages
-on: { push: { branches: [main] }, workflow_dispatch: {} }
-permissions: { contents: read, pages: write, id-token: write }
-concurrency: { group: "pages", cancel-in-progress: true }
-defaults: { run: { working-directory: cat-hub } }
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: cat-hub
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: npm, cache-dependency-path: cat-hub/package-lock.json }
-      - run: npm ci || npm i
-      - run: CI=false npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: ./cat-hub/build }
-  deploy:
-  needs: build
-  runs-on: ubuntu-latest
-  environment:
-    name: github-pages
-  steps:
-    - name: Deploy
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: cat-hub/package-lock.json
+      - name: Install deps
+        run: npm ci || npm i
+      - name: Build
+        run: npm run build
+        env:
+          CI: false
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./cat-hub/build
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
