@@ -28,9 +28,12 @@ jobs:
           cache: npm
           cache-dependency-path: cat-hub/package-lock.json
       - run: npm ci || npm i
-      - run: npm run build
-        env:
-          CI: false
+      - name: Build
+      run: npm run build
+      env:
+      CI: false
+    REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_MAPS_API_KEY }}
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./cat-hub/build
