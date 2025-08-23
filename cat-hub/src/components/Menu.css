@@ -93,11 +93,12 @@
 }
 
 .nav-link:hover,
-.nav-link.active {
-    filter: grayscale(0%) opacity(1);
-    background-color: var(--bg-primary-light);
-    color: var(--bg-secondary);
-    border-right: 1px solid var(--bg-primary-lighter);
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  filter: grayscale(0%) opacity(1);
+  background-color: var(--bg-primary-light);
+  color: var(--bg-secondary);
+  border-right: 1px solid var(--bg-primary-lighter);
 }
 
 .link-text {
@@ -118,30 +119,15 @@
 .nav-link:hover i.primary,
 .nav-link:hover svg.primary,
 .nav-link:hover .icon-img,
-.nav-link.active .icon-img {
-    color: var(--icon-primary);
+.nav-link.active .icon-img,
+.nav-link[aria-current="page"] .icon-img {
+  color: var(--icon-primary);
 }
 
-/* .nav-link i.primary,
-.nav-link svg.primary {
-    color: var(--text-primary);
+.nav-link:focus-visible {
+  outline: 2px solid var(--icon-secondary);
+  outline-offset: 2px;
 }
-
-.nav-link i.secondary,
-.nav-link svg.secondary {
-    color: var(--text-secondary);
-}
-
-.nav-link:hover i.primary,
-.nav-link:hover svg.primary {
-    color: var(--icon-primary);
-}
-
-.nav-link:hover i.secondary,
-.nav-link:hover svg.secondary {
-    color: var(--icon-secondary);
-} */
-
 
 main {
     margin-left: 5rem;
