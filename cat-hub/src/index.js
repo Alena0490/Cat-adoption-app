@@ -7,4 +7,8 @@ import App from './App';
 
 const container = document.getElementById('result')
 const root = createRoot(container)
-root.render(<App tab="home" />)
+root.render(
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <App tab="home"  />
+    </BrowserRouter>
+)
