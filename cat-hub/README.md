@@ -1,7 +1,7 @@
 # 🐾 Cat Hub – React App for Cat Adoption
 
-![Cat Hub mockup](./cat-hub/src/images/mockupblack.png)
-![Cat Hub mockup](./cat-hub/src/images/mockupwhite.png)
+![Cat Hub mockup](./src/images/mockupblack.png)
+![Cat Hub mockup](./src/images/mockupwhite.png)
 
 A **frontend-only React application** for cat adoption, deployed on **GitHub Pages**.  
 The project focuses on **React, API integration, theming, accessibility and responsive design**.
