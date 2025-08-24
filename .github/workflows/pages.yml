@@ -22,7 +22,7 @@ jobs:
       run: npm install
     
     - name: Build
-      run: npm run build:prod
+      run: npm run build
       env:
         REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
         REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
@@ -33,3 +33,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
+        
