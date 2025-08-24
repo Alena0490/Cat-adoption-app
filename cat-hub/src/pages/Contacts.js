@@ -14,11 +14,11 @@ import {
 import { ReactComponent as PawIcon } from "../images/pet-14-svgrepo-com.svg";
 
 const LIGHT_MAP_ID = "952b4b02b47e01bbfac7915e";
-const DARK_MAP_ID  = "952b4b02b47e01bbbd7fc9f3";
+const DARK_MAP_ID = "952b4b02b47e01bbbd7fc9f3";
 
 // Pomocná komponenta – přepíná mapId na již existující mapě
 function MapThemeSync({ isLight }) {
-  const map = useMap();                // instance google.maps.Map (až po mountu <Map>)
+  const map = useMap();
   useEffect(() => {
     if (!map) return;
     map.setOptions({ mapId: isLight ? LIGHT_MAP_ID : DARK_MAP_ID });
@@ -56,10 +56,9 @@ const Contacts = () => {
     }
   }, [hash]);
 
-  // klíč – podporujeme oba názvy (lokálně i v GH Actions)
-  const mapsKey =
-    process.env.REACT_APP_MAPS_API_KEY ||
-    process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  // Klíč z environment variables - podporujeme oba názvy
+  const mapsKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY || 
+                   process.env.REACT_APP_MAPS_API_KEY;
 
   return (
     <div className="contacts page">
@@ -92,16 +91,19 @@ const Contacts = () => {
           <div className="address-map card">
             <div className="map-viewport">
               {mapsKey ? (
-                <APIProvider apiKey={mapsKey}>
+                <APIProvider 
+                  apiKey={mapsKey}
+                  onLoad={() => console.log('Maps API loaded')}
+                  onError={(error) => console.error('Maps API error:', error)}
+                >
                   <Map
-                    // žádné `key` → už se to nebude rozbíjet
-                    mapId={isLight ? LIGHT_MAP_ID : DARK_MAP_ID} // počáteční styl
+                    mapId={isLight ? LIGHT_MAP_ID : DARK_MAP_ID}
                     defaultCenter={center}
                     defaultZoom={12}
                     gestureHandling="greedy"
                     className="map-box"
+                    onLoad={() => console.log('Map loaded')}
                   >
-                    {/* živé přepínání stylu bez remountu */}
                     <MapThemeSync isLight={isLight} />
 
                     <AdvancedMarker position={center} anchor={{ x: 0.5, y: 1 }}>
@@ -117,7 +119,12 @@ const Contacts = () => {
                   </Map>
                 </APIProvider>
               ) : (
-                <p className="map-fallback">Mapa dočasně nedostupná.</p>
+                <div className="map-fallback">
+                  <p>Mapa dočasně nedostupná.</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                    {process.env.NODE_ENV === 'development' && 'API klíč nenalezen'}
+                  </p>
+                </div>
               )}
             </div>
           </div>
@@ -166,7 +173,7 @@ const Contacts = () => {
           <li><FaPaw className="icon" />Fundraising events…</li>
         </ul>
         <p>
-          If you’re interested, please fill out the{" "}
+          If you're interested, please fill out the{" "}
           <a href="#contact-form" aria-label="scroll to contact form">form</a>.
         </p>
       </section>
