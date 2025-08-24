@@ -54,4 +54,5 @@ jobs:
       name: github-pages
     steps:
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4
