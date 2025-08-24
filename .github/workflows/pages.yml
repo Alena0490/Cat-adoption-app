@@ -17,20 +17,18 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
+        cache: 'yarn'
     
     - name: Install dependencies
-      run: npm ci
+      run: yarn install --frozen-lockfile
     
     - name: Build
-      run: npm run build
+      run: yarn build
       env:
         # Nastavte tyto secrets v GitHub repository settings
         REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
         REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
         PUBLIC_URL: /Cat-adoption-app
-        # Pokud používáte Google Pay
-        REACT_APP_GOOGLE_PAY_MERCHANT_ID: ${{ secrets.REACT_APP_GOOGLE_PAY_MERCHANT_ID }}
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
