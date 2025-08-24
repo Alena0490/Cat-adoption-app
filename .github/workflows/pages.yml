@@ -2,35 +2,64 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    
+    # 👉 Run kroky poběží ve složce cat-hub (kde máš package.json)
+    defaults:
+      run:
+        working-directory: cat-hub
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-    
-    - name: Install dependencies
-      run: npm install
-    
-    - name: Build
-      run: npm run build
-      env:
-        REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
-        REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
-        PUBLIC_URL: /Cat-adoption-app
-    
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
-        
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: cat-hub/package-lock.json
+
+      - name: Install deps
+        run: npm ci --no-audit --prefer-offline
+
+      - name: Build
+        run: npm run build
+        env:
+          CI: false
+          REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_MAPS_API_KEY }}
+          REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_MAPS_API_KEY }}
+
+      # SPA fallback – jsme uvnitř cat-hub/, proto ./build
+      - name: SPA fallback (index -> 404)
+        run: cp ./build/index.html ./build/404.html
+
+      # ⚠️ "uses" kroky default working-directory NEZDĚDÍ → dej cestu od rootu
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: cat-hub/build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy
+        uses: actions/deploy-pages@v4
