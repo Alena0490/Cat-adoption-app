@@ -42,6 +42,10 @@ jobs:
           REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_MAPS_API_KEY }}
           REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_MAPS_API_KEY }}
 
+      # SPA fallback – aby /contacts (a refresh) načetl stejné bundly jako index
+      - name: SPA fallback (index -> 404)
+        run: cp ./cat-hub/build/index.html ./cat-hub/build/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
