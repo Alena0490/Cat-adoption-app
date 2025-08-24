@@ -60,6 +60,8 @@ const Contacts = () => {
   const mapsKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY || 
                    process.env.REACT_APP_MAPS_API_KEY;
 
+                   console.info("MAPS_KEY_PRESENT", Boolean(mapsKey));
+
   return (
     <div className="contacts page">
       <h1>Contact Us</h1>
