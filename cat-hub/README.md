@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# 🐾 Cat Hub – React App for Cat Adoption
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Cat Hub mockup](./cat-hub/src/images/mockupblack.png)
+![Cat Hub mockup](./cat-hub/src/images/mockupwhite.png)
 
-## Available Scripts
+A **frontend-only React application** for cat adoption, deployed on **GitHub Pages**.  
+The project focuses on **React, API integration, theming, accessibility and responsive design**.
 
-In the project directory, you can run:
+🔗 Live demo: [https://alena0490.github.io/Cat-adoption-app/](https://alena0490.github.io/Cat-adoption-app/)
+📂 Repository: [https://github.com/Alena0490/Cat-adoption-app](https://github.com/Alena0490/Cat-adoption-app)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Cat listings with filters** (gender, availability, castration, age group) – `src/pages/Cats.jsx`
+- **Google Maps API** – custom marker (AdvancedMarker + Pin with paw icon) + **dynamic map styles** switching with light/dark theme – `src/pages/Contacts.jsx`
+- **Google Pay (TEST)** – integrated donation button – `src/components/OneCat.jsx`
+- **Settings sidebar** – theme switch (light/dark) + font scaling, persisted in `localStorage`
+- **Responsive & accessible UI** – visible focus rings, keyboard navigation, aria roles, reduced motion respected
+- **Routing with React Router** – Home / Cats / About / Contacts / 404 page
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧩 Implementation details
 
-### `npm run build`
+- **Theming** – handled via `html.light-theme` class + dynamic `mapId` (light/dark); `MutationObserver` synchronizes map style with UI.
+- **Google Maps** – integrated with `@vis.gl/react-google-maps`, fallback message shown if API key is missing.
+- **Google Pay** – implemented with `PaymentsClient({ environment: 'TEST' })`, demo gateway configuration.
+- **UX & accessibility** – controlled focus in dialogs, background scroll lock when sidebars open, honeypot anti-spam field in forms.
+- **Navigation** – responsive sidebar (desktop) / bottom navigation (mobile), active states via `NavLink`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔐 API Keys
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Uses a **browser API key** for Google Maps – visible in client-side code.  
+  ➝ Must be **restricted** in Google Cloud Console (HTTP referrers + Maps JavaScript API restriction).  
+- Key injected during build via **GitHub Secrets** (see code).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📂 Project structure (simplified)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+src/
+components/
+AdoptionForm.jsx
+FAQ.jsx / Question.jsx
+Footer.jsx
+Form.jsx
+Menu.jsx
+OneCat.jsx
+SettingsSidebar.jsx / SettingsContent.jsx
+pages/
+Home.jsx
+Cats.jsx
+Contacts.jsx
+About.jsx
+Error.jsx
+images/, styles (CSS), data.js
+public/
+index.html (theme init + pay.js, favicons, manifest)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ♿ Accessibility
 
-## Learn More
+- Color contrast and typography aligned with WCAG 2.2 AA  
+- Full keyboard navigation support  
+- Focus traps and visible outlines in dialogs and sidebars  
+- Reduced motion respected for animations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Roadmap (frontend only)
 
-### Code Splitting
+- Extend cat filters and detail view  
+- Micro-interactions and improved loading/error states  
+- Optimize image performance (sizes/srcset, lazy loading)  
+- Further tuning of accessibility and responsive layouts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📜 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT
