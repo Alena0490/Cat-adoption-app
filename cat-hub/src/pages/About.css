@@ -179,6 +179,7 @@ section.kitty {
 	height: 52%;
 	width: 27%;
 	background: white;
+    border: 4px solid black;
 }
 	
 	/* Ear hair */
@@ -190,7 +191,7 @@ section.kitty {
 		height: 10%;
 		width: 5%;
 		border-radius: 50%;
-		background: var(--bg-secondary);
+		background: black;
 	}
 	
 	.ear::after {
@@ -198,14 +199,14 @@ section.kitty {
 	}
 
 .ear--left {
-	left: -6%;
+	left: -3%;
 	border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
 	transform: rotate(-15deg);
 }
 	
 .ear--left::before,
 .ear--left::after {
-    right: 10%;
+    right: 12%;
 }
 
 .ear--left::after {
@@ -213,14 +214,14 @@ section.kitty {
 }
 
 .ear--right {
-	right: -6%;
+	right: -3%;
 	border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
 	transform: rotate(15deg);
 }
 	
 .ear--right::before,
 .ear--right::after {
-    left: 10%;
+    left: 12%;
 }
 	
 .ear--right::after {
@@ -233,7 +234,7 @@ section.kitty {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: var(--bg-secondary);
+	background: black;
 	border-radius: 50%;
 }
 
@@ -256,7 +257,7 @@ section.kitty {
     height: 0;
     width: 100%;
     border-radius: 0 0 50% 50% / 0 0 40% 40%;
-    background: var(--bg-secondary);
+    background: black;
     animation: blink 4s infinite ease-in;
 }
 	
