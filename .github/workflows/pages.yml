@@ -17,15 +17,13 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'yarn'
     
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      run: npm install
     
     - name: Build
-      run: yarn build
+      run: npm run build
       env:
-        # Nastavte tyto secrets v GitHub repository settings
         REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
         REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
         PUBLIC_URL: /Cat-adoption-app
