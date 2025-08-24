@@ -42,7 +42,7 @@ jobs:
           REACT_APP_MAPS_API_KEY: ${{ secrets.REACT_APP_MAPS_API_KEY }}
           REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_MAPS_API_KEY }}
 
-      # SPA fallback – kopíruj uvnitř cat-hub/
+      # SPA fallback – jsme uvnitř cat-hub/, proto ./build
       - name: SPA fallback (index -> 404)
         run: cp ./build/index.html ./build/404.html
 
