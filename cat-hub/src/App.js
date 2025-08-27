@@ -12,11 +12,6 @@ const About = lazy(() => import("./pages/About"));
 const Contacts = lazy(() => import("./pages/Contacts"));
 const Error = lazy(() => import("./pages/Error"));
 
-// import Cats from './pages/Cats';
-// import About from './pages/About';
-// import Contacts from './pages/Contacts';
-// import Error from './pages/Error';
-
 const App = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 

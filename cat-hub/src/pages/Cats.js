@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { IoClose } from "react-icons/io5";
 import OneCat from "../components/OneCat";
 import cats from "../data";
 import "./Cats.css";
-import AdoptionForm from "../components/AdoptionForm";
+const AdoptionForm = lazy(() => import("../components/AdoptionForm"));
 
 const Cats = () => {
   /* FILTER */
@@ -207,11 +207,12 @@ const Cats = () => {
             >
               <IoClose />
             </button>
-
-            <AdoptionForm
-              initialPreferredCat={selectedCat?.name ?? ""}
-              onSubmitted={requestClose}
-            />
+              <Suspense fallback={<div>Loading form...</div>}>
+                <AdoptionForm
+                  initialPreferredCat={selectedCat?.name ?? ""}
+                  onSubmitted={requestClose}
+                />
+              </Suspense>
           </section>
         </div>
       )}
