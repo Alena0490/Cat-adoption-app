@@ -1,22 +1,25 @@
 import { Link } from "react-router-dom"
 import "./Home.css";
+import { useEffect } from "react";
 import { FaAnglesDown } from "react-icons/fa6";
 import { FaHandHoldingHeart } from "react-icons/fa6";
 import { FaHandsHelping, FaPaw } from "react-icons/fa";
 import headingPhoto6 from "../images/heading-photo6.webp";
 import headingPhoto7 from "../images/heading-photo7.webp";
 
-const preloadImages = [headingPhoto6, headingPhoto7];
-preloadImages.forEach((src) => {
-  const link = document.createElement("link");
-  link.rel = "preload";
-  link.as = "image";
-  link.href = src;
-  link.fetchPriority = "high";
-  document.head.appendChild(link);
-});
-
 const Home = () => {
+
+    useEffect(() => {
+    [headingPhoto6, headingPhoto7].forEach((src) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      link.fetchPriority = "high";
+      document.head.appendChild(link);
+    });
+  }, []);
+
     return (
         <div className="home">
             <section className="hero">
