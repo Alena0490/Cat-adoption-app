@@ -1,15 +1,16 @@
 /*** PAGE WRAPPER & SECTIONS ***/
-.section-lead {
-    color: var(--text-secondary);
-    margin-top: .25rem;
-    max-width: 70ch;
-}
-
 .contacts.page {
     margin: 0;
     padding: 1rem 0 0;
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
+    scroll-snap-type: mandatory;
+}
+
+.section-lead {
+    color: var(--text-secondary);
+    margin-top: .25rem;
+    max-width: 70ch;
 }
 
 .contacts.page a {
@@ -32,6 +33,7 @@
 .contacts.page form {
     max-width: 1100px;
     margin-inline: auto;
+    scroll-snap-align: start;
 }
 
 /*** LAYOUT ***/
@@ -255,10 +257,15 @@ transition: all var(--transition-speed) var(--transition-timing);
 
 #donate { 
     background-color: var(--bg-secondary); 
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: 20px; 
 }
 
 #volunteer { 
     background-color: var(--bg-primary-light); 
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 #donate h2, #volunteer h2 {

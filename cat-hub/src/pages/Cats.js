@@ -101,6 +101,16 @@ const Cats = () => {
     };
   }, []);
 
+  useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://pay.google.com/gp/p/js/pay.js";
+  script.async = true;
+  document.body.appendChild(script);
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
+
   return (
     <div className="cats page">
       <h1>Cats for adoption</h1>

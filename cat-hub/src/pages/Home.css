@@ -120,13 +120,27 @@ a.scroll-down:hover .scroll-icon {
 
 .mission {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
     padding-left: 4rem;
-    /* background-color: var(--bg-secondary); */
     font-size: var(--fs-md);
     line-height: 1.4;
     color: var(--text-primary);
     text-align: center;
+}
+
+.mission h2 {
+    width: 100%;
+    text-align: left;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    text-shadow: var(--shadow-md);
+}
+
+.mission--alt {
+    background-color: var(--bg-primary-light);
+    color: var(--text-secondary);
 }
 
 #mission {
@@ -141,9 +155,11 @@ a.scroll-down:hover .scroll-icon {
 
 #mission p {
     max-width: 700px;
+    scroll-snap-align: start;
 }
 
 #adoption {
+    min-height: 95svh;
     background: 
     linear-gradient(to right, transparent 0%, var(--bg-primary-light) 55%), 
     url('../images/adoption.webp') -8rem center / cover no-repeat;
@@ -161,22 +177,12 @@ a.scroll-down:hover .scroll-icon {
     max-width: 700px;
 }
 
-.mission h2 {
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    text-shadow: var(--shadow-md);
-}
-
-.mission--alt {
-    background-color: var(--bg-primary-light);
-    color: var(--text-secondary);
-}
-
 .mini-icons {
     display: flex;
     justify-content: center;
     gap: 2rem; 
     margin-block: 2rem;
+    margin-top: auto;
 }
 
 .mini-icons a {

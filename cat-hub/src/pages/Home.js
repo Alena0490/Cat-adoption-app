@@ -19,7 +19,7 @@ const Home = () => {
                 </a>
             </section>
             <section className="mission page" id="mission" aria-label="our-mission">
-                <h2>Our Mission</h2>
+                <h2 id="mission-heading">Our Mission</h2>
                 <p>We are dedicated to&nbsp;finding loving homes for&nbsp;cats in&nbsp;need. Our mission is to&nbsp;promote cat adoption and&nbsp;provide resources for&nbsp;cat care. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. </p>
             </section>
 

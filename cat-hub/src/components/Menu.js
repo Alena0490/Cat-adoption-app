@@ -49,7 +49,11 @@ const Menu = ({ onOpenSettings }) => {
         </li>
 
         <li className="navbar-li">
-          <button type="button" className="nav-link settings-button" onClick={handleSettingsClick}>
+          <button 
+            type="button" 
+            className="nav-link settings-button" 
+            onClick={handleSettingsClick}
+            aria-label="Settings">
             <FaGear className="icon-img" />
             <span className="link-text">Settings</span>
           </button>
