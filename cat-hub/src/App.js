@@ -3,7 +3,6 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 
 import Menu from './components/Menu';
 import Footer from './components/Footer';
-import SettingsSidebar from "./components/SettingsSidebar";
 
 import Home from './pages/Home';
 
@@ -11,6 +10,8 @@ const Cats = lazy(() => import("./pages/Cats"));
 const About = lazy(() => import("./pages/About"));
 const Contacts = lazy(() => import("./pages/Contacts"));
 const Error = lazy(() => import("./pages/Error"));
+
+const SettingsSidebar = lazy(() => import("./components/SettingsSidebar"));
 
 const App = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -27,7 +28,9 @@ const App = () => {
       </header>
 
       {isSettingsOpen && (
-        <SettingsSidebar onClose={() => setIsSettingsOpen(false)} />
+        <Suspense fallback={<div>Loading settings…</div>}>
+          <SettingsSidebar onClose={() => setIsSettingsOpen(false)} />
+        </Suspense>
       )}
 
       <main className="main-content">

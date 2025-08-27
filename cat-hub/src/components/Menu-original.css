@@ -1,0 +1,251 @@
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary-lighter);
+    transition: all var(--transition-speed) var(--transition-timing);
+    z-index: 5;
+     overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    white-space: nowrap;
+    scrollbar-gutter: stable both-edges;
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+.navbar::-webkit-scrollbar-track {
+    background-color: #1e1e24;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background-color: #6649b8;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background-color: var(--bg-primary-lighter);
+    font-size: var(--fs-md);
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo .icon-img {
+    transform: rotate(0deg);
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+
+.navbar:hover .logo .icon-img {
+    transform: rotate(-180deg);
+}
+
+.navbar-li {
+    width: 100%;
+}
+
+
+.navbar-li:last-child {
+    margin-top: auto;
+}
+
+.settings-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-align: left;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.navbar:hover .nav-link {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  filter: grayscale(0%) opacity(1);
+  background-color: var(--bg-primary-light);
+  color: var(--bg-secondary);
+  border-right: 1px solid var(--bg-primary-lighter);
+}
+
+.link-text {
+    display: none;
+    font-size: var(--fs-sm);
+    margin-left: 1rem;
+    color: var(--text-secondary);
+}
+
+.nav-link .icon-img,
+.nav-link svg {
+    min-width: 2rem;
+    font-size: var(--fs-md);
+    transition: all var(--transition-speed) var(--transition-timing);
+    color: var(--text-primary);
+}
+
+.nav-link:hover i.primary,
+.nav-link:hover svg.primary,
+.nav-link:hover .icon-img,
+.nav-link.active .icon-img,
+.nav-link[aria-current="page"] .icon-img {
+  color: var(--icon-primary);
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--icon-secondary);
+  outline-offset: 2px;
+}
+
+main {
+    margin-left: 5rem;
+    min-height: 90vh;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;             
+        right: 0;           
+        height: 4rem;
+        width: auto !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        z-index: 5;
+        }
+    .navbar:hover,
+    .navbar:focus-within {
+        width: auto !important;
+    }
+
+    .link-text { 
+        display: none !important; 
+        transition: all var(--transition-speed-fast) var(--transition-timing);
+    }
+
+    .navbar .nav-link,
+    .navbar:hover .nav-link,
+    .navbar:focus-within .nav-link {
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+  .logo {
+        display: none; 
+    }
+
+    .navbar { 
+        transition: background-color var(--transition-speed) var(--transition-timing); 
+    }
+}
+
+
+@media (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+        transition: all var(--transition-speed) var(--transition-timing);
+    }
+
+    .navbar:hover { 
+        width: 16rem; 
+    }
+
+  .navbar:hover .link-text { 
+        display: inline; 
+    }
+
+    .nav-link:focus-visible { 
+        outline: 2px solid var(--icon-secondary); 
+        outline-offset: 2px; 
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+        transition: all var(--transition-speed-fast) var(--transition-timing);
+    }
+}
+
+/* === DESKTOP: mouse/trackpad (has hover) – only :hover === */
+@media (min-width: 600px) and (hover: hover) and (pointer: fine) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+        transition: all var(--transition-speed) var(--transition-timing);
+    }
+
+    .navbar:hover .logo .icon-img {
+        transform: rotate(-180deg);
+    }
+
+    .navbar:hover .nav-link {
+        display: flex;     
+        justify-content: flex-start;
+        padding: 2rem;
+        width: 100%;
+    }
+
+}
+
+/* === TOUCH / without hover – allowed :focus-within  for keybard=== */
+@media (min-width: 600px) and (hover: none), (pointer: coarse) {
+    .navbar:focus-within { 
+        width: 16rem; 
+    }
+
+    .navbar:focus-within .link-text { 
+        display: inline; 
+    }
+}

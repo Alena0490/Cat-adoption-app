@@ -1,0 +1,180 @@
+.one-cat {
+    max-width: 21rem;
+    min-height: 645px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-primary-light);
+    color: var(--text-primary);
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+    box-shadow: var(--shadow-sm)
+}
+
+.one-cat .btn:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+.one-cat img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3; 
+    object-fit: cover; 
+    border-radius: var(--radius-sm);
+}
+
+.one-cat h2 {
+    margin: 0.625rem 0;
+    color: var(--icon-primary);
+}
+
+.one-cat p {
+    margin: 0.5rem;
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.cat-details {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+}
+
+.cat-details p {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: .25rem .5rem;
+    margin: .5rem 0;
+    font-size: var(--fs-base);
+    text-align: left;
+}
+
+.cat-details p > strong { 
+    white-space: nowrap; 
+}
+
+.cat-details p .status {
+    justify-self: start;       
+    align-self: center;
+    width: max-content;      
+    display: inline-block; 
+    padding: .25rem .5rem;
+    border-radius: var(--radius-sm);    
+}
+
+.status.available { 
+    color: var(--color-success); 
+}
+
+.status.unavailable { 
+    color: var(--color-error); 
+}
+
+@supports (color: color-mix(in oklab, black, white)) {
+    .status.available {
+        background: color-mix(in oklab, var(--color-success) 25%, transparent);
+    }
+    .status.unavailable {
+        background: color-mix(in oklab, var(--color-error) 25%, transparent);
+    }
+}
+
+h2 .sex-icon {
+    font-size: var(--fs-lg);
+    margin-left: 0.5rem;
+    margin-bottom: -0.5rem;
+}
+
+.icon-male {
+    color: var(--color-info); 
+}
+.icon-female {
+    color: var(--icon-primary); 
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: .5rem;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: auto;
+}
+
+.buttons button {
+    background-color: var(--button-primary);
+    color: var(--text-secondary);
+    border: none;
+    padding: 0.75rem 1rem;
+    margin: 0.25rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    transition: all var(--transition-speed) var(--transition-timing);
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    transform: scale(1.04);
+}
+
+.buttons .donate-button {
+    background-color: var(--text-secondary);
+    color: var(--bg-primary);
+}
+
+.buttons .donate-button:hover {
+    background-color: var(--text-primary);
+}
+
+.buttons .adopt-button.disabled {
+    filter: grayscale(100%);
+    opacity: 0.9;
+}
+
+.buttons .adopt-button.disabled:hover {
+    background-color: var(--button-primary);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.buttons .adopt-button:hover {
+    background-color: var(--button-secondary);
+}
+
+@media (max-width: 868px) {
+    .one-cat {
+        max-width: 31rem;
+    }
+}
+
+@media (max-width: 668px) {
+    .one-cat {
+        max-width: 100%;
+        padding: .5rem;
+    }
+    
+    .one-cat img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .one-cat h2 {
+        font-size: var(--fs-md);
+    }
+    
+    .one-cat p {
+        font-size: var(--fs-base);
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .buttons button {
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+}

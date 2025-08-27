@@ -1,14 +1,1 @@
-.faq {
-    background-color: var(--bg-secondary);
-    padding: 1.25rem;
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
-    max-width: 1100px;
-    margin-inline: auto;
-}
-
-.faq h2 {
-    font-size: var(--fs-lg);
-    margin-bottom: 1rem;
-    color: var(--text-muted);
-}
+.faq{background-color:var(--bg-secondary);padding:1.25rem;border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);max-width:1100px;margin-inline:auto}.faq h2{font-size:var(--fs-lg);margin-bottom:1rem;color:var(--text-muted)}

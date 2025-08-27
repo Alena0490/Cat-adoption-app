@@ -1,0 +1,149 @@
+
+.form-wrap h2 {
+    margin-bottom: 0rem;
+}
+
+form.form {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    background-color: var(--bg-primary-lighter);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form label {
+    color: var(--text-secondary);
+    width: 100%;
+    font-size: var(--fs-base);
+    line-height: 1rem;
+    vertical-align: middle;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: -0.75rem;
+}
+
+.form label svg {
+    margin-right: 0.5rem;
+    color: var(--text-secondary)
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: var(--fs-base);
+    color: var(--text-primary);
+    background-color: var(--bg-primary-light);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: all var(--transition-speed) var(--transition-timing);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    box-shadow: inset 0px 0px 2px var(--text-secondary);
+    background-color: var(--bg-secondary);
+}
+
+.form input[type="email"][aria-invalid="true"] {
+  color: var(--color-error);
+}
+
+.is-invalid { 
+    outline: 2px solid var(--color-error); 
+}
+
+.form input[type="text"][aria-invalid="true"],
+.form input[type="email"][aria-invalid="true"],
+.form textarea[aria-invalid="true"] {
+    border-color: var(--color-error) !important;
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-sm);
+}
+
+small[role="alert"] {
+    color: var(--color-error-light);
+    text-shadow: 0px 0px 2px rgba(0,0,0,.5);
+    background-color: var(--bg-primary-light);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--bg-primary-lighter);
+    padding: .3rem .6rem;
+    display: block; 
+    margin-top: .25rem; 
+}
+
+.form input[type="submit"].btn,
+.form button[type="submit"].btn {
+    width: 100%;
+    background-color: var(--icon-secondary);
+    color: var(--text-secondary);
+    border: none;
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--fs-base);
+    font-weight: 700;
+    transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.form input[type="submit"].btn:hover,
+.form button[type="submit"].btn:hover {
+    background-color: var(--icon-primary);
+    color: var(--text-primary);
+    transform: scale(1.01);
+}
+
+/* submit focus ring */
+.form input[type="submit"].btn:focus-visible,
+.form button[type="submit"].btn:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/*visible focus*/
+.form input:focus-visible,
+.form textarea:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.form-status {
+    margin-top: .5rem;
+    border-radius: var(--radius-sm);
+    padding: .4rem .6rem;
+}
+
+/* success*/
+.form-status.success {
+    color: var(--color-success);
+    background: color-mix(in srgb, var(--color-success) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-success) 35%, transparent);    
+}
+
+/* error*/
+.form-status.error {
+    color: var(--color-error);
+    background: color-mix(in srgb, var(--color-error) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-error) 35%, transparent);
+}
+
+/* honeypot*/
+.hp {
+    position: absolute !important;
+    left: -10000px;
+    top: auto;
+    width: 1px; height: 1px;
+    overflow: hidden;
+}
