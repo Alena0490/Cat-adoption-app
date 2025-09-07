@@ -314,7 +314,7 @@ a.scroll-down:hover .scroll-icon {
 
      #adoption {
         background: 
-         linear-gradient(to left, transparent 0%, var(--bg-secondary-transparent) 0%), 
+        linear-gradient(to right, transparent 0%, var(--bg-primary-light-transparent2) 0%), 
         url('../images/adoption.webp') -19rem center / cover no-repeat;
     }
 }
